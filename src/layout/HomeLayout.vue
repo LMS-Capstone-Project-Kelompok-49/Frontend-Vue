@@ -18,7 +18,7 @@
           
           <b-navbar-nav>
             <b-nav-item href="login">Login</b-nav-item>
-            <b-button variant="info" class="p-2" href="login">Sign Up</b-button>
+            <b-button variant="info" class="p-2" href="register">Sign Up</b-button>
           </b-navbar-nav>
 
         </b-collapse>
