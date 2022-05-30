@@ -6,7 +6,8 @@ import HomeView from '../views/HomeView.vue'
 import ProgramsView from '../views/ProgramsView.vue'
 import CoursesView from '../views/CoursesView.vue'
 import ContactView from '../views/ContactView.vue'
-import LoginRegisterView from '../views/LoginRegisterView.vue'
+import LoginView from '../views/LoginView.vue'
+import RegisterView from '../views/RegisterView.vue'
 
 Vue.use(VueRouter)
 
@@ -61,8 +62,19 @@ const routes = [
     children: [
       {
         path: "",
-        name: "LoginRegisterView",
-        component: LoginRegisterView,
+        name: "LoginView",
+        component: LoginView,
+      },
+    ],
+  },
+  {
+    path: "/register",
+    component: HomePageLayout,
+    children: [
+      {
+        path: "",
+        name: "RegisterView",
+        component: RegisterView,
       },
     ],
   },
