@@ -19,7 +19,20 @@ const routes = [
           {
             path: '',
             name: 'Home',
-            component: HomeView
+            component: HomeView,
+            meta: {
+              title: 'Home Page - Example App',
+              metaTags: [
+                {
+                  name: 'description',
+                  content: 'The home page of our example app.'
+                },
+                {
+                  property: 'og:description',
+                  content: 'The home page of our example app.'
+                }
+              ]
+            }
           }
         ]
       }
