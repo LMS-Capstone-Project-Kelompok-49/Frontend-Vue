@@ -20,36 +20,42 @@ const routes = [
             path: '',
             name: 'Home',
             component: HomeView,
-            meta: {
-              title: 'Home Page - Example App',
-              metaTags: [
-                {
-                  name: 'description',
-                  content: 'The home page of our example app.'
-                },
-                {
-                  property: 'og:description',
-                  content: 'The home page of our example app.'
-                }
-              ]
-            }
+          },
+          {
+            path: 'programs',
+            name: 'ProgramPage',
+            component: () => import('../views/ProgramsView.vue')
+          },
+          {
+            path: 'courses',
+            name: 'CoursesPage',
+            component: () => import('../views/CoursesView.vue')
+          },
+          {
+            path: 'contact',
+            name: 'ContactPage',
+            component: () => import('../views/ContactView.vue')
+          },
+          {
+            path: 'login',
+            name: 'LoginPage',
+            component: () => import('../views/LoginView.vue')
+          },
+          {
+            path: 'register',
+            name: 'RegisterPage',
+            component: () => import('../views/RegisterView.vue')
           }
         ]
       }
     ]
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   }
-]
+];
 
 const router = new VueRouter({
-  routes
-})
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes,
+});
 
 export default router

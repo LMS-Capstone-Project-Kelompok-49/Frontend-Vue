@@ -13,6 +13,10 @@ git clone https://github.com/LMS-Capstone-Project-Kelompok-49/Frontend-Vue.git
 -   Vuex PersistedState (Global Storage)
 -   Axios (Data Fetching)
 
+## Catatan Program
+1.  Index Space : 2
+2.  Penamaan Komponen CamelCase (NavbarComponent)
+
 ## Project setup
 ```
 npm install
