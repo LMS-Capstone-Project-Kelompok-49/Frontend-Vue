@@ -10,11 +10,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: HomePageLayout,
+    component: TemplateViewPages,
     children: [
       {
         path: '',
-        component: TemplateViewPages,
+        component: HomePageLayout,
         children: [
           {
             path: '',
@@ -35,19 +35,19 @@ const routes = [
             path: 'contact',
             name: 'ContactPage',
             component: () => import('../views/ContactView.vue')
-          },
-          {
-            path: 'login',
-            name: 'LoginPage',
-            component: () => import('../views/LoginView.vue')
-          },
-          {
-            path: 'register',
-            name: 'RegisterPage',
-            component: () => import('../views/RegisterView.vue')
           }
         ]
-      }
+      },
+      {
+        path: 'login',
+        name: 'LoginPage',
+        component: () => import('../views/LoginView.vue')
+      },
+      {
+        path: 'register',
+        name: 'RegisterPage',
+        component: () => import('../views/RegisterView.vue')
+      },
     ]
   }
 ];
