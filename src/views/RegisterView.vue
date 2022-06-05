@@ -2,7 +2,7 @@
   <b-container fluid>
     <div class="row">
       <div class="col-sm-12 col-md-6 p-5 d-none d-lg-block">
-        <b-img rounded center class="img-poster" alt="Rounded image" src="../assets/images/loginregisterposter.png"></b-img>
+        <SidePoster :type="'register'" />
       </div>
       <div class="col-sm-12 col-md-6 col-12 p-5">
         <FormRegister/>
@@ -13,11 +13,13 @@
 
 <script>
 import FormRegister from '@/components/loginregister/RegisterForm.vue'
+import SidePoster from '@/components/loginregister/PosterPicture.vue'
 
 export default {
   name: 'RegisterView',
   components: {
-    FormRegister
+    FormRegister,
+    SidePoster
   }
 }
 </script>
