@@ -74,7 +74,6 @@ export default {
       event.preventDefault()
       this.emptyLoginMessage()
       this.loading = !this.loading
-      console.log("aman");
       this.$store.dispatch('main/loginCheck', this.form)
       setTimeout(() => (this.loading = !this.loading), 6000)
     },

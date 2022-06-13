@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import HomePageLayout from '@/layout/HomeLayout.vue'
 import TemplateViewPages from '@/layout/DefaultView.vue'
+import DashboardTemplate from '@/layout/DashboardLayout.vue'
 import HomeView from '../views/HomeView.vue'
 
 Vue.use(VueRouter)
@@ -48,6 +49,17 @@ const routes = [
         name: 'RegisterPage',
         component: () => import('../views/RegisterView.vue')
       },
+      {
+        path: 'dashboard',
+        component: DashboardTemplate,
+        children: [
+          {
+            path: '',
+            name: 'HomeDashboard',
+            component: () => import('../views/dashboard/HomeView.vue')
+          }
+        ]
+      }
     ]
   }
 ];
