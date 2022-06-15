@@ -1,11 +1,16 @@
 <template>
-  <div class="container-fluid">
-    <h1>Dashboard</h1>
+  <div class="container-fluid d-flex-column">
+    <MainDashboard />
   </div>
 </template>
 
 <script>
+import MainDashboard from "@/components/dashboard/MainDashboard.vue"
+
 export default {
-  name: 'HomeDashboard'
+  name: 'HomeDashboard',
+  components: {
+    MainDashboard,
+  }
 }
 </script>
