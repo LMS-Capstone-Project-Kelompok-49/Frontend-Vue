@@ -1,363 +1,120 @@
 <template>
     <div class="cards pt-5 mt-5">
-        <h2 class="titlecolor mb-5 mt-5">Explore Your Courses</h2>
-        <div class="container">
-            <div class="row row-cols-md-3 mb-5">
-                <div class="col">
-
-                    <div class="card row text-light border-light" style="width: 24rem;">
-                        <div class="row card-body">
-                            <div class="col rectangle4486">
-                                <img :src="require('@/assets/images/Rectangle4486.png')" width="70px" />
-                            </div>
-                            <div class="col"> 
-                                <p> Rating </p>
-                            </div>
-
+        <h2 class="titlecolor mb-5 mt-5" v-if="!title">Explore Your Courses</h2>
+        <h2 class="titlecolor mb-5 mt-5" v-if="title">{{ title }}</h2>
+        <div class="row mb-5">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="n in 6" :key="n">
+                <div class="card border-light">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
                             <div>
-                                <h5 class="card-title mt-5 ml-2">Mastering React JS untuk Pemula</h5>
+                                <img :src="require('@/assets/images/Rectangle4486.png')"/>
                             </div>
-
-                            <div class="d-flex flex-row">
-                                <img :src="require('@/assets/images/akun.png')" width="10%" />
-                                <p class="akun ml-2 card-text">Fernando Hendrict</p>
-                            </div>
-                            <div class="d-inline">
-                                
-                            </div>
-
-                            <div class="keterangan d-flex justify-content-between mt-2 ml-2">
-                                <img :src="require('@/assets/images/videos.png')" width="10%" />
-                                <p class="card-text">15 Videos</p>
-                                <img :src="require('@/assets/images/members.png')" width="10%" /> 
-                                <p class="card-text">50+ Members</p>
-                            </div>
-
-                            <div class="d-flex flex-row justify-content-between mt-3">
-                                <div class="d-flex flex-column">
-                                    <div class="price">
-                                        <del>Rp 600.000</del>
-                                    </div>
-                                    <div>
-                                       <h5 class="card-title">Rp 520.000</h5>
-                                    </div>
-
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-light text-center mt-2">Join Class</a>
-                                </div>
-
+                            <div>
+                                <b-form-rating v-model="rating" variant="warning" class="rating-form" no-border readonly></b-form-rating>
                             </div>
                         </div>
-                    </div>  
+                        <div>
+                            <label class="title-course">Mastering React Js untuk Pemula</label>
+                            <div class="sub-title-course">
+                                <div class="">
+                                    <i class="fas fa-user text-muted mr-3"></i>
+                                    <label class="text-muted">Fernando Hendrict</label>
+                                </div>
+                            </div>
+                            <div class="d-flex sub-subtile-course">
+                                <div>
+                                    <i class="fas fa-file-video mr-2 icon"></i>
+                                    <label class="text-muted">15 Videos</label>
+                                </div>
+                                <div class="mx-3">
+                                    <i class="fas fa-users mr-2 icon"></i>
+                                    <label class="text-muted">50+ Members  </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <div>
+                                <div class="discount-course">
+                                    <label class="text-decoration-line-through text-muted">Rp 600.000</label>
+                                </div>
+                                <div class="price-course">
+                                    <label>Rp 600.000</label>
+                                </div>
+                            </div>
+                            <div class="btn-course-wrapper">
+                                <button class="btn btn-success py-2 btn-join-course">
+                                    Join Class
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-
-                    <div class="col">
-
-                    <div class="card row text-light border-light" style="width: 24rem;">
-                        <div class="row card-body">
-                            <div class="col rectangle4486">
-                                <img :src="require('@/assets/images/Rectangle4486.png')" width="70px" />
-                            </div>
-                            <div class="col"> 
-                                <p> Rating </p>
-                            </div>
-
-                            <div>
-                                <h5 class="card-title mt-5 ml-2">Mastering React JS untuk Pemula</h5>
-                            </div>
-
-                            <div class="d-flex flex-row">
-                                <img :src="require('@/assets/images/akun.png')" width="10%" />
-                                <p class="akun ml-2 card-text">Fernando Hendrict</p>
-                            </div>
-                            <div class="d-inline">
-                                
-                            </div>
-
-                            <div class="keterangan d-flex justify-content-between mt-2 ml-2">
-                                <img :src="require('@/assets/images/videos.png')" width="10%" />
-                                <p class="card-text">15 Videos</p>
-                                <img :src="require('@/assets/images/members.png')" width="10%" /> 
-                                <p class="card-text">50+ Members</p>
-                            </div>
-
-                            <div class="d-flex flex-row justify-content-between mt-3">
-                                <div class="d-flex flex-column">
-                                    <div class="price">
-                                        <del>Rp 600.000</del>
-                                    </div>
-                                    <div>
-                                       <h5 class="card-title">Rp 520.000</h5>
-                                    </div>
-
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-light text-center mt-2">Join Class</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-
-
-                <div class="col">
-
-                    <div class="card row text-light border-light" style="width: 24rem;">
-                        <div class="row card-body">
-                            <div class="col rectangle4486">
-                                <img :src="require('@/assets/images/Rectangle4486.png')" width="70px" />
-                            </div>
-                            <div class="col"> 
-                                <p> Rating </p>
-                            </div>
-
-                            <div>
-                                <h5 class="card-title mt-5 ml-2">Mastering React JS untuk Pemula</h5>
-                            </div>
-
-                            <div class="d-flex flex-row">
-                                <img :src="require('@/assets/images/akun.png')" width="10%" />
-                                <p class="akun ml-2 card-text">Fernando Hendrict</p>
-                            </div>
-                            <div class="d-inline">
-                                
-                            </div>
-
-                            <div class="keterangan d-flex justify-content-between mt-2 ml-2">
-                                <img :src="require('@/assets/images/videos.png')" width="10%" />
-                                <p class="card-text">15 Videos</p>
-                                <img :src="require('@/assets/images/members.png')" width="10%" /> 
-                                <p class="card-text">50+ Members</p>
-                            </div>
-
-                            <div class="d-flex flex-row justify-content-between mt-3">
-                                <div class="d-flex flex-column">
-                                    <div class="price">
-                                        <del>Rp 600.000</del>
-                                    </div>
-                                    <div>
-                                       <h5 class="card-title">Rp 520.000</h5>
-                                    </div>
-
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-light text-center mt-2">Join Class</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-
-
-                <div class="col">
-
-                    <div class="card row text-light border-light" style="width: 24rem;">
-                        <div class="row card-body">
-                            <div class="col rectangle4486">
-                                <img :src="require('@/assets/images/Rectangle4486.png')" width="70px" />
-                            </div>
-                            <div class="col"> 
-                                <p> Rating </p>
-                            </div>
-
-                            <div>
-                                <h5 class="card-title mt-5 ml-2">Mastering React JS untuk Pemula</h5>
-                            </div>
-
-                            <div class="d-flex flex-row">
-                                <img :src="require('@/assets/images/akun.png')" width="10%" />
-                                <p class="akun ml-2 card-text">Fernando Hendrict</p>
-                            </div>
-                            <div class="d-inline">
-                                
-                            </div>
-
-                            <div class="keterangan d-flex justify-content-between mt-2 ml-2">
-                                <img :src="require('@/assets/images/videos.png')" width="10%" />
-                                <p class="card-text">15 Videos</p>
-                                <img :src="require('@/assets/images/members.png')" width="10%" /> 
-                                <p class="card-text">50+ Members</p>
-                            </div>
-
-                            <div class="d-flex flex-row justify-content-between mt-3">
-                                <div class="d-flex flex-column">
-                                    <div class="price">
-                                        <del>Rp 600.000</del>
-                                    </div>
-                                    <div>
-                                       <h5 class="card-title">Rp 520.000</h5>
-                                    </div>
-
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-light text-center mt-2">Join Class</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-
-
-                <div class="col">
-
-                    <div class="card row text-light border-light" style="width: 24rem;">
-                        <div class="row card-body">
-                            <div class="col rectangle4486">
-                                <img :src="require('@/assets/images/Rectangle4486.png')" width="70px" />
-                            </div>
-                            <div class="col"> 
-                                <p> Rating </p>
-                            </div>
-
-                            <div>
-                                <h5 class="card-title mt-5 ml-2">Mastering React JS untuk Pemula</h5>
-                            </div>
-
-                            <div class="d-flex flex-row">
-                                <img :src="require('@/assets/images/akun.png')" width="10%" />
-                                <p class="akun ml-2 card-text">Fernando Hendrict</p>
-                            </div>
-                            <div class="d-inline">
-                                
-                            </div>
-
-                            <div class="keterangan d-flex justify-content-between mt-2 ml-2">
-                                <img :src="require('@/assets/images/videos.png')" width="10%" />
-                                <p class="card-text">15 Videos</p>
-                                <img :src="require('@/assets/images/members.png')" width="10%" /> 
-                                <p class="card-text">50+ Members</p>
-                            </div>
-
-                            <div class="d-flex flex-row justify-content-between mt-3">
-                                <div class="d-flex flex-column">
-                                    <div class="price">
-                                        <del>Rp 600.000</del>
-                                    </div>
-                                    <div>
-                                       <h5 class="card-title">Rp 520.000</h5>
-                                    </div>
-
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-light text-center mt-2">Join Class</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-
-                <div class="col">
-
-                    <div class="card row text-light border-light" style="width: 24rem;">
-                        <div class="row card-body">
-                            <div class="col rectangle4486">
-                                <img :src="require('@/assets/images/Rectangle4486.png')" width="70px" />
-                            </div>
-                            <div class="col"> 
-                                <p> Rating </p>
-                            </div>
-
-                            <div>
-                                <h5 class="card-title mt-5 ml-2">Mastering React JS untuk Pemula</h5>
-                            </div>
-
-                            <div class="d-flex flex-row">
-                                <img :src="require('@/assets/images/akun.png')" width="10%" />
-                                <p class="akun ml-2 card-text">Fernando Hendrict</p>
-                            </div>
-                            <div class="d-inline">
-                                
-                            </div>
-
-                            <div class="keterangan d-flex justify-content-between mt-2 ml-2">
-                                <img :src="require('@/assets/images/videos.png')" width="10%" />
-                                <p class="card-text">15 Videos</p>
-                                <img :src="require('@/assets/images/members.png')" width="10%" /> 
-                                <p class="card-text">50+ Members</p>
-                            </div>
-
-                            <div class="d-flex flex-row justify-content-between mt-3">
-                                <div class="d-flex flex-column">
-                                    <div class="price">
-                                        <del>Rp 600.000</del>
-                                    </div>
-                                    <div>
-                                       <h5 class="card-title">Rp 520.000</h5>
-                                    </div>
-
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-light text-center mt-2">Join Class</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>  
-                </div>                                
-
-            </div>        
+            </div>
+        </div>
     </div>
-</div>
 </template>
 
 <script>
 export default {
-  name: 'ExploreCourseItem'
+  name: 'ExploreCourseItem',
+  props: {
+      title: String
+  },
+  data() {
+      return {
+        rating: 4
+      }
+  },
 }
 </script>
 
 <style scoped>
 .titlecolor { 
-/* position: absolute; */
-width: 348px;
-height: 48px;
-left: 80px;
-top: 2133px;
-
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 32px;
-line-height: 48px;
-/* identical to box height */
-/* onyx */
-
-color: #3D3D3D;
+    width: 348px;
+    height: 48px;
+    left: 80px;
+    top: 2133px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #3D3D3D;
 }
-.rectangle4486 {
-/* position: absolute; */
-height: 70px;
-left: 5.5%;
-right: 77%;
-top: 22px;
-
-
-border-radius: 8px;
+.rating-form {
+    margin-top: 10%;
 }
-
-.card {
-   background-color: white; 
+.title-course {
+    color: #00899F;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 1em;
 }
-
-.card-title{
-    color: black;
+.sub-title-course{
+    font-size: 1em;
 }
-
-.keterangan{
-    color: black;
+.sub-subtile-course{
+    font-size: .9em;
 }
-
-.akun{
-    color:black;
+.sub-subtile-course .icon {
+    color: #00AFB9;
 }
-
-.price{
-    color: black;
+.discount-course {
+    font-size: .8em;
+}
+.price-course {
+    font-size: 1.2em;
+    color: #DD234E;
+    font-weight: 600;
+}
+.btn-course-wrapper {
+    margin: auto 0 0;
+}
+.btn-join-course {
+    background-color: #00AFB9;
+    border-color: #00AFB9;
+    padding-right: 2.5em;
+    padding-left: 2.5em;
 }
 </style>
