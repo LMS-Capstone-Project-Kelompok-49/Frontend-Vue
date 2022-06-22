@@ -31,7 +31,7 @@
               <template #button-content>
                 <em>User</em>
               </template>
-              <b-dropdown-item href="#">Dashboard</b-dropdown-item>
+              <b-dropdown-item :to="{ name: 'HomeDashboard' }">Dashboard</b-dropdown-item>
               <b-dropdown-item @click="signOut">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
 
