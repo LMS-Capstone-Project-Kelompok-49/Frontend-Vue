@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 p-5">
+  <div class="p-3 login-wrapper">
 		<h1>Log in to your account</h1>
 		<label class="font-weight-bold text-muted">
 			Welcome back! Please enter your details.
@@ -35,8 +35,8 @@
 				</div>
 			</div>
 
-      <button v-if="!loading" type="submit" class="btn-submit btn btn-primary btn-block rounded-pill p-3 my-4">Sign in</button>
-      <button v-if="loading" type="button" class="btn-submit btn btn-primary btn-block rounded-pill	 p-3" disabled>
+      <button v-if="!loading" type="submit" class="btn-submit btn btn-success btn-block rounded-pill bg-mx-green border-mx-green p-3 my-4">Sign in</button>
+      <button v-if="loading" type="button" class="btn-submit btn btn-success btn-block rounded-pill bg-mx-green border-mx-green	 p-3" disabled>
         <b-spinner label="Spinning"></b-spinner>
       </button>
 		</form>
@@ -85,11 +85,12 @@ export default {
 </script>
 
 <style scoped>
-.btn-submit {
-  background-color: #00AFB9;
-  border-color: #00AFB9;
-}
 input {
   height: 50px;
+}
+@media screen and (min-width: 1024px) {
+  .login-wrapper {
+    margin-top: 15%;
+  }
 }
 </style>

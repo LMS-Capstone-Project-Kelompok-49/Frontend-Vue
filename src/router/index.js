@@ -36,6 +36,11 @@ const routes = [
             path: 'contact',
             name: 'ContactPage',
             component: () => import('../views/ContactView.vue')
+          },
+          {
+            path: 'request',
+            name: 'RequestPage',
+            component: () => import('../views/RequestView.vue')
           }
         ]
       },
@@ -57,7 +62,17 @@ const routes = [
             path: '',
             name: 'HomeDashboard',
             component: () => import('../views/dashboard/HomeView.vue')
-          }
+          },
+          {
+            path: 'courses',
+            name: 'CoursesDashboard',
+            component: () => import('../views/dashboard/CourseView.vue')
+          },
+          {
+            path: 'certificate',
+            name: 'CertificateDashboard',
+            component: () => import('../views/dashboard/CertificateView.vue')
+          },
         ]
       }
     ]

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 p-5">
+  <div class="register-wrapper">
 		<h1>Create Your Account</h1>
 		<label class="font-weight-bold text-muted">
 			Start for free!
@@ -12,7 +12,7 @@
       {{ errorMessage }}
     </div>
     
-		<form class="mt-4 w-lg-50" autocomplete="off" @submit="Register">
+		<form class="w-lg-50" autocomplete="off" @submit="Register">
 
       <div class="form-group">
 				<h5 for="NameInput" class="font-weight-bold">Name</h5>
@@ -62,13 +62,13 @@
 				</div>
 			</div>
 
-      <div class="mt-5 row">
-        <div class="col-sm-12 col-md-3">
-          <button type="button" class="btn btn-outline-dark btn-block rounded-sm   p-3" @click="getBack">Back</button>
+      <div class="row button-wrapper">
+        <div class="col-sm-6 col-md-3 order-1">
+          <button type="button" class="btn btn-outline-dark btn-block rounded-sm p-3 btn-back" @click="getBack">Back</button>
         </div>
-        <div class="col-sm-12 col-md-9">
-          <button v-if="!loading" type="submit"  class="btn btn-primary btn-block rounded-pill p-3 btn-submit" >Sign in</button>
-          <button v-if="loading" type="button"  class="btn btn-primary btn-block rounded-pill	 p-3 btn-submit" disabled>
+        <div class="col-sm-12 col-md-9 order-0">
+          <button v-if="!loading" type="submit" class="btn btn-success btn-block rounded-pill p-3 bg-mx-green border-mx-green">Sign in</button>
+          <button v-if="loading" type="button" class="btn btn-success btn-block rounded-pill p-3 bg-mx-green border-mx-green" disabled>
             <b-spinner label="Spinning"></b-spinner>
           </button>
         </div>
@@ -129,7 +129,23 @@ export default {
 </script>
 
 <style scoped>
-.btn-submit {
-	background-color: #00AFB9;
+.button-wrapper {
+  margin-top: 1em;
+}
+@media screen and (max-width: 767px) {
+  .btn-back {
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .register-wrapper {
+    margin-top: 10%;
+  }
+  form {
+    margin-top: 2em;
+  }
+  .button-wrapper {
+    margin-top: 2em;
+  }
 }
 </style>
