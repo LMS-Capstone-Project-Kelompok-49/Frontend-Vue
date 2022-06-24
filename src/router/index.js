@@ -5,6 +5,7 @@ import HomePageLayout from '@/layout/HomeLayout.vue'
 import TemplateViewPages from '@/layout/DefaultView.vue'
 import DashboardTemplate from '@/layout/DashboardLayout.vue'
 import HomeView from '../views/HomeView.vue'
+import CoursesView from '../views/CoursesView.vue'
 
 Vue.use(VueRouter)
 
@@ -23,14 +24,14 @@ const routes = [
             component: HomeView,
           },
           {
-            path: 'programs',
-            name: 'ProgramPage',
-            component: () => import('../views/ProgramsView.vue')
-          },
-          {
             path: 'courses',
             name: 'CoursesPage',
-            component: () => import('../views/CoursesView.vue')
+            component: CoursesView,
+          },
+          {
+            path: 'courses/detail',
+            name: 'DetailCoursePage',
+            component: () => import('../views/DetailCourseView.vue')
           },
           {
             path: 'contact',
@@ -74,7 +75,7 @@ const routes = [
             component: () => import('../views/dashboard/CertificateView.vue')
           },
         ]
-      }
+      },
     ]
   }
 ];

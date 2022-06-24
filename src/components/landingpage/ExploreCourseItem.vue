@@ -1,7 +1,12 @@
 <template>
     <div class="cards pt-5 mt-5">
         <h2 class="titlecolor mb-5 mt-5" v-if="!title">Explore Your Courses</h2>
-        <h2 class="titlecolor mb-5 mt-5" v-if="title">{{ title }}</h2>
+        <div v-if="!typeTitle">
+            <h2 class="titlecolor mb-5 mt-5" v-if="title">{{ title }}</h2>
+        </div>
+        <div v-if="typeTitle">
+            <h3 v-if="title">{{ title }}</h3>
+        </div>
         <div class="row mb-5">
             <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="n in 6" :key="n">
                 <div class="card border-light">
@@ -43,7 +48,7 @@
                                 </div>
                             </div>
                             <div class="btn-course-wrapper">
-                                <button class="btn btn-success py-2 btn-join-course">
+                                <button class="btn btn-success py-2 btn-join-course" @click="toDetail">
                                     Join Class
                                 </button>
                             </div>
@@ -59,12 +64,18 @@
 export default {
   name: 'ExploreCourseItem',
   props: {
-      title: String
+      title: String,
+      typeTitle: Number,
   },
   data() {
       return {
         rating: 4
       }
+  },
+  methods: {
+    toDetail () {
+        this.$router.push({ name: 'DetailCoursePage' })
+    }
   },
 }
 </script>
