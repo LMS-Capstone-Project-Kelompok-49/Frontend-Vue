@@ -1,10 +1,10 @@
 <template>
   <b-container fluid>
     <div class="row">
-      <div class="col-sm-12 col-md-6 p-5 d-none d-lg-block">
-        <SidePoster :type="'register'" />
+      <div id="poster" class="col-sm-12 col-md-6 col-lg-6 p-5">
+        <SidePoster :type="'register'"/>
       </div>
-      <div class="col-sm-12 col-md-6 col-12 p-5">
+      <div class="col-sm-12 col-md-12 col-lg-6 p-5">
         <FormRegister/>
       </div>
     </div>
@@ -27,5 +27,10 @@ export default {
 <style scoped>
 .img-poster {
   height: 88vh;
+}
+@media screen and (max-width: 991px) {
+  #poster {
+    display: none;
+  }
 }
 </style>

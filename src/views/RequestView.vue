@@ -1,12 +1,12 @@
 <template>
   <div class="programs">
-    Programs Page
+    Request Page
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ProgramsView',
+  name: 'RequestView',
   components: {
   }
 }

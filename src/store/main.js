@@ -22,7 +22,7 @@ const mutations = {
 const actions = {
   async loginCheck (store, payload) {
     try {
-      const link = 'http://ec2-54-242-195-218.compute-1.amazonaws.com/auth/login'
+      const link = 'http://54.236.5.123/auth/login'
       await axios.post(link,
         {
           email: payload.email,
@@ -55,6 +55,7 @@ const actions = {
   },
   signOut (store) {
     store.commit('setIsLogin', false)
+    router.push({ name: 'Home' })
   }
 }
 

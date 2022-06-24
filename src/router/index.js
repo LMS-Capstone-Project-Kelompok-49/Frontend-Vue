@@ -5,6 +5,7 @@ import HomePageLayout from '@/layout/HomeLayout.vue'
 import TemplateViewPages from '@/layout/DefaultView.vue'
 import DashboardTemplate from '@/layout/DashboardLayout.vue'
 import HomeView from '../views/HomeView.vue'
+import CoursesView from '../views/CoursesView.vue'
 
 Vue.use(VueRouter)
 
@@ -23,19 +24,24 @@ const routes = [
             component: HomeView,
           },
           {
-            path: 'programs',
-            name: 'ProgramPage',
-            component: () => import('../views/ProgramsView.vue')
-          },
-          {
             path: 'courses',
             name: 'CoursesPage',
-            component: () => import('../views/CoursesView.vue')
+            component: CoursesView,
+          },
+          {
+            path: 'courses/detail',
+            name: 'DetailCoursePage',
+            component: () => import('../views/DetailCourseView.vue')
           },
           {
             path: 'contact',
             name: 'ContactPage',
             component: () => import('../views/ContactView.vue')
+          },
+          {
+            path: 'request',
+            name: 'RequestPage',
+            component: () => import('../views/RequestView.vue')
           }
         ]
       },
@@ -57,9 +63,19 @@ const routes = [
             path: '',
             name: 'HomeDashboard',
             component: () => import('../views/dashboard/HomeView.vue')
-          }
+          },
+          {
+            path: 'courses',
+            name: 'CoursesDashboard',
+            component: () => import('../views/dashboard/CourseView.vue')
+          },
+          {
+            path: 'certificate',
+            name: 'CertificateDashboard',
+            component: () => import('../views/dashboard/CertificateView.vue')
+          },
         ]
-      }
+      },
     ]
   }
 ];

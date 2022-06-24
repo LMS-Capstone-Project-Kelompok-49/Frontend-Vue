@@ -7,7 +7,6 @@
                 <img src="../assets/images/logofooter.png" alt="">
             </span>
         </div>
-
         <i class='bx bx-chevron-right toggle' @click="close = !close"></i>
       </header>
 
@@ -15,16 +14,16 @@
         <div class="menu">
           <ul class="menu-links">
             <li class="nav-link">
-                <a href="#">
+                <a @click="toPage('HomeDashboard')">
                     <i class='bx bxs-dashboard icon' ></i>
                     <span class="text nav-text">Dashboard</span>
                 </a>
             </li>
 
             <li class="nav-link">
-                <a href="#">
+                <a @click="toPage('CoursesDashboard')">
                     <i class='bx bx-task icon' ></i>
-                    <span class="text nav-text">Assignments</span>
+                    <span class="text nav-text">Course</span>
                 </a>
             </li>
 
@@ -36,7 +35,7 @@
             </li>
 
             <li class="nav-link">
-                <a href="#">
+                <a @click="toPage('CertificateDashboard')">
                     <i class='bx bx-certification icon'></i>
                     <span class="text nav-text">Certificate</span>
                 </a>
@@ -53,9 +52,9 @@
 
         <div class="bottom-content">
           <li>
-            <a href="#">
+            <a @click="signOut">
               <i class='bx bx-power-off icon' ></i>
-              <span class="text nav-text">Logout</span>
+              <span class="text nav-text">Sign Out</span>
             </a>
           </li>
         </div>
@@ -86,6 +85,14 @@ export default {
       close: false
     }
   },
+  methods: {
+    toPage (routeName) {
+      this.$router.push({ name: routeName })
+    },
+    signOut () {
+      this.$store.dispatch('main/signOut')
+    }
+  }
 }
 </script>
 
@@ -121,6 +128,7 @@ body{
   display: flex;
   align-items: center;
   margin-top: 10px;
+  cursor: pointer;
 }
 .sidebar header .image,
 .sidebar .icon{

@@ -20,7 +20,7 @@
       </div>
     </div>
     <div>
-      <ExploreCourseItem />
+      <ExploreCourseItem :title="titleCourse" />
     </div>
   </div>
 </template>
@@ -42,6 +42,11 @@ export default {
     SecTitleItem,
     SecHeroPictureItem,
     ExploreCourseItem
-  }
+  },
+  data() {
+    return {
+      titleCourse: 'Explore Your Courses'
+    }
+  },
 }
 </script>

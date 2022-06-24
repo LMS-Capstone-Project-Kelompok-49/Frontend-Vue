@@ -1,18 +1,18 @@
 <template>
   <div class="home container">
     <div class="row mt-3">
-      <div class="col">
+      <div class="col-sm-12 col-md-6">
         <HeroCourseItem />
       </div>
-      <div class="col">
+      <div class="col-sm-12 col-md-6">
         <TitleCourseItem />
       </div>
     </div>
-    <div>
+    <div class="my-5 pt-5">
       <CategoryCardsItem />
     </div>
     <div>
-      <PopularCourseItem />
+      <ExploreCourseItem :title="'Popular Course'" :typeTitle="3" />
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@
 import TitleCourseItem from "../components/coursespage/TitleCourseItem.vue"
 import HeroCourseItem from "../components/coursespage/HeroCourseItem.vue"
 import CategoryCardsItem from "../components/coursespage/CategoryCardsItem.vue"
-import PopularCourseItem from "../components/coursespage/PopularCourseItem.vue"
+import ExploreCourseItem from "../components/landingpage/ExploreCourseItem.vue"
 
 export default {
   name: 'CoursesView',
@@ -29,7 +29,7 @@ export default {
     TitleCourseItem,
     HeroCourseItem,
     CategoryCardsItem,
-    PopularCourseItem,
+    ExploreCourseItem
   }
 }
 </script>

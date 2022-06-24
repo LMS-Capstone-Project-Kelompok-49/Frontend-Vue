@@ -1,32 +1,40 @@
 <template>
-    <div class="cards pt-5 mt-5">
-        <h2 class="titlecolor mb-5 mt-5">Our Learning Opportunity</h2>
-        <div class="d-flex text-center justify-content-center align-items-center">
-            <div class="card bg-dark text-white mr-5 border-light">
-                <img :src="require('@/assets/images/image_card.jpg')" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="card-title m-4">Frontend</h5>
-                </div>
-            </div>
-            <div class="card bg-dark text-white ml-5 mr-5 border-light">
-                <img :src="require('@/assets/images/image_card.jpg')" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="card-title m-4">Backend</h5>
-                </div>
-            </div>
-            <div class="card bg-dark text-white mr-5 ml-5 border-light">
-                <img :src="require('@/assets/images/image_card.jpg')" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="card-title m-2">Quality Engineer</h5>
-                </div>
-            </div>
-            <div class="card bg-dark text-white ml-5 border-light">
-                <img :src="require('@/assets/images/image_card.jpg')" class="card-img" alt="...">
-                <div class="card-img-overlay m-4">
-                    <h5 class="card-title">UI/UX</h5>
-                </div>
-            </div>
+    <div class="cards my-5">
+        <h3 class="text-dark">Browse By Category</h3>
+        <div class="d-flex text-center align-items-center flex-wrap">
+            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center mr-2">
+                <img :src="require('@/assets/images/logo_category.png')" alt="...">
+                <h5 class="card-title m-4">Design</h5>
+            </b-button>
+            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center mr-2">
+                <img :src="require('@/assets/images/logo_category.png')" alt="...">
+                <h5 class="card-title m-4">Design</h5>
+            </b-button>
+            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center mr-2">
+                <img :src="require('@/assets/images/logo_category.png')" alt="...">
+                <h5 class="card-title m-4">Design</h5>
+            </b-button>
+            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center mr-2">
+                <img :src="require('@/assets/images/logo_category.png')" alt="...">
+                <h5 class="card-title m-4">Design</h5>
+            </b-button>
+            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center mr-2">
+                <img :src="require('@/assets/images/logo_category.png')" alt="...">
+                <h5 class="card-title m-4">Design</h5>
+            </b-button>
+            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center mr-2">
+                <img :src="require('@/assets/images/logo_category.png')" alt="...">
+                <h5 class="card-title m-4">Design</h5>
+            </b-button>
         </div>
+        <!-- <div class="row">
+            <div class="col-sm-12 col-md-2 mt-4" v-for="n in 8" :key="n">
+                <b-button variant="outline-primary" class="btn-category d-flex align-items-center">
+                    <img :src="require('@/assets/images/logo_category.png')" alt="...">
+                    <h5 class="card-title m-4">Design</h5>
+                </b-button>
+            </div>
+        </div> -->
     </div>
 </template>
 
@@ -37,7 +45,12 @@ export default {
 </script>
 
 <style scoped>
-.titlecolor {
-   color: #3D3D3D; 
+.btn-category {
+    height: 4em;
+    color: #999898;
+}
+.btn-category:hover {
+    background-color: #00AFB9;
+    color: white;
 }
 </style>

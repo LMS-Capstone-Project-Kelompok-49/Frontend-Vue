@@ -14,7 +14,7 @@ const mutations = {
 const actions = {
   async registerPost (store, payload) {
     console.log(payload);
-    const link = 'http://ec2-54-242-195-218.compute-1.amazonaws.com/auth/register'
+    const link = 'http://54.236.5.123/auth/register'
     await axios.post(link,
     {
       name: payload.name,
