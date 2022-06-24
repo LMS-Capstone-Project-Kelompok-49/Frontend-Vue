@@ -4,102 +4,264 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col">
-                    <div class="card text-light border-light" style="width: 18rem;">
-                        <div class="card-body">
-                            <div class="logo-image">
-                                <img :src="require('@/assets/images/logo_course.png')" width="50px" />
+                  <div style="width: 18rem;">
+                    <router-link
+                            :to="{
+                            name: 'DetailCoursePage',
+                            }"
+                    >
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img :src="require('@/assets/images/logo_mycourse.png')" width="100%" />
                             </div>
-                            <h5 class="card-title mt-3">Flutter Courses</h5>
-                            <h5 class="card-title">$100</h5>
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">45 Videos</p>
-                                <p class="card-text">5k+ reviews</p>
+                            <div class="col-8 d-flex-column mt-2">
+                                <div>
+                                    <b-form-rating variant="warning" id="rating-md-no-border" v-model="value" no-border></b-form-rating>
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-light text-center">Join Now</a>
+                        </div>
+                        <h5 class="card-title mt-3">Mastering React JS Untuk Pemula</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_students_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">30 Students</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_material_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">3 Materials</p>
+                                </div>
+                            </div>
+                            <div class="d-flex-column mt-2">
+                                <s>Rp.600.000</s>
+                                <div>
+                                    <h5 class="text-danger">Rp.520.000</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    </router-link>
+                  </div>
                 </div>
                 <div class="col">
-                    <div class="card text-light border-light" style="width: 18rem;">
-                        <div class="card-body">
-                            <div class="logo-image">
-                                <img :src="require('@/assets/images/logo_course.png')" width="50px" />
+                    <div style="width: 18rem;">
+                    <router-link
+                            :to="{
+                            name: 'DetailCoursePage',
+                            }"
+                    >
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img :src="require('@/assets/images/logo_mycourse.png')" width="100%" />
                             </div>
-                            <h5 class="card-title mt-3">Flutter Courses</h5>
-                            <h5 class="card-title">$100</h5>
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">45 Videos</p>
-                                <p class="card-text">5k+ reviews</p>
+                            <div class="col-8 d-flex-column mt-2">
+                                <div>
+                                    <b-form-rating variant="warning" id="rating-md-no-border" v-model="value" no-border></b-form-rating>
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-light text-center">Join Now</a>
+                        </div>
+                        <h5 class="card-title mt-3">Mastering React JS Untuk Pemula</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_students_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">30 Students</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_material_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">3 Materials</p>
+                                </div>
+                            </div>
+                            <div class="d-flex-column mt-2">
+                                <s>Rp.600.000</s>
+                                <div>
+                                    <h5 class="text-danger">Rp.520.000</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    </router-link>
+                  </div>
                 </div>
                 <div class="col">
-                    <div class="card text-light border-light" style="width: 18rem;">
-                        <div class="card-body">
-                            <div class="logo-image">
-                                <img :src="require('@/assets/images/logo_course.png')" width="50px" />
+                    <div style="width: 18rem;">
+                    <router-link
+                            :to="{
+                            name: 'DetailCoursePage',
+                            }"
+                    >
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img :src="require('@/assets/images/logo_mycourse.png')" width="100%" />
                             </div>
-                            <h5 class="card-title mt-3">Flutter Courses</h5>
-                            <h5 class="card-title">$100</h5>
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">45 Videos</p>
-                                <p class="card-text">5k+ reviews</p>
+                            <div class="col-8 d-flex-column mt-2">
+                                <div>
+                                    <b-form-rating variant="warning" id="rating-md-no-border" v-model="value" no-border></b-form-rating>
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-light text-center">Join Now</a>
+                        </div>
+                        <h5 class="card-title mt-3">Mastering React JS Untuk Pemula</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_students_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">30 Students</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_material_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">3 Materials</p>
+                                </div>
+                            </div>
+                            <div class="d-flex-column mt-2">
+                                <s>Rp.600.000</s>
+                                <div>
+                                    <h5 class="text-danger">Rp.520.000</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    </router-link>
+                  </div>
                 </div>
             </div>
             <div class="row mb-5">
                 <div class="col">
-                    <div class="card text-light border-light" style="width: 18rem;">
-                        <div class="card-body">
-                            <div class="logo-image">
-                                <img :src="require('@/assets/images/logo_course.png')" width="50px" />
+                    <div style="width: 18rem;">
+                    <router-link
+                            :to="{
+                            name: 'DetailCoursePage',
+                            }"
+                    >
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img :src="require('@/assets/images/logo_mycourse.png')" width="100%" />
                             </div>
-                            <h5 class="card-title mt-3">Flutter Courses</h5>
-                            <h5 class="card-title">$100</h5>
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">45 Videos</p>
-                                <p class="card-text">5k+ reviews</p>
+                            <div class="col-8 d-flex-column mt-2">
+                                <div>
+                                    <b-form-rating variant="warning" id="rating-md-no-border" v-model="value" no-border></b-form-rating>
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-light text-center">Join Now</a>
+                        </div>
+                        <h5 class="card-title mt-3">Mastering React JS Untuk Pemula</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_students_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">30 Students</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_material_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">3 Materials</p>
+                                </div>
+                            </div>
+                            <div class="d-flex-column mt-2">
+                                <s>Rp.600.000</s>
+                                <div>
+                                    <h5 class="text-danger">Rp.520.000</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    </router-link>
+                  </div>
                 </div>
                 <div class="col">
-                    <div class="card text-light border-light" style="width: 18rem;">
-                        <div class="card-body">
-                            <div class="logo-image">
-                                <img :src="require('@/assets/images/logo_course.png')" width="50px" />
+                    <div style="width: 18rem;">
+                    <router-link
+                            :to="{
+                            name: 'DetailCoursePage',
+                            }"
+                    >
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img :src="require('@/assets/images/logo_mycourse.png')" width="100%" />
                             </div>
-                            <h5 class="card-title mt-3">Flutter Courses</h5>
-                            <h5 class="card-title">$100</h5>
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">45 Videos</p>
-                                <p class="card-text">5k+ reviews</p>
+                            <div class="col-8 d-flex-column mt-2">
+                                <div>
+                                    <b-form-rating variant="warning" id="rating-md-no-border" v-model="value" no-border></b-form-rating>
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-light text-center">Join Now</a>
+                        </div>
+                        <h5 class="card-title mt-3">Mastering React JS Untuk Pemula</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_students_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">30 Students</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_material_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">3 Materials</p>
+                                </div>
+                            </div>
+                            <div class="d-flex-column mt-2">
+                                <s>Rp.600.000</s>
+                                <div>
+                                    <h5 class="text-danger">Rp.520.000</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    </router-link>
+                  </div>
                 </div>
                 <div class="col">
-                    <div class="card text-light border-light" style="width: 18rem;">
-                        <div class="card-body">
-                            <div class="logo-image">
-                                <img :src="require('@/assets/images/logo_course.png')" width="50px" />
+                    <div style="width: 18rem;">
+                    <router-link
+                            :to="{
+                            name: 'DetailCoursePage',
+                            }"
+                    >
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img :src="require('@/assets/images/logo_mycourse.png')" width="100%" />
                             </div>
-                            <h5 class="card-title mt-3">Flutter Courses</h5>
-                            <h5 class="card-title">$100</h5>
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">45 Videos</p>
-                                <p class="card-text">5k+ reviews</p>
+                            <div class="col-8 d-flex-column mt-2">
+                                <div>
+                                    <b-form-rating variant="warning" id="rating-md-no-border" v-model="value" no-border></b-form-rating>
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-light text-center">Join Now</a>
+                        </div>
+                        <h5 class="card-title mt-3">Mastering React JS Untuk Pemula</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_students_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">30 Students</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <img :src="require('@/assets/images/logo_material_mycourse.png')" width="15%" height="15%" />
+                                    <p class="tutor align-items-center pt-3 pl-2">3 Materials</p>
+                                </div>
+                            </div>
+                            <div class="d-flex-column mt-2">
+                                <s>Rp.600.000</s>
+                                <div>
+                                    <h5 class="text-danger">Rp.520.000</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                  </router-link>
+                  </div>
                 </div>
             </div>
         </div>
@@ -123,8 +285,8 @@ export default {
   overflow: hidden;
   margin-top: -6px;
 }
-.card {
-   background-color: #00AFB9; 
+.card-title {
+   color: #00AFB9;
 }
 
 </style>

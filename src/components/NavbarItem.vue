@@ -14,7 +14,6 @@
           
           <b-navbar-nav class="m-auto">
             <b-nav-item :to="{ name: 'Home' }" class="mx-3 fw-semibold">Home</b-nav-item>
-            <b-nav-item :to="{ name: 'ProgramPage' }" class="mx-3 fw-semibold">Programs</b-nav-item>
             <b-nav-item :to="{ name: 'CoursesPage' }" class="mx-3 fw-semibold">Courses</b-nav-item>
             <b-nav-item :to="{ name: 'ContactPage' }" class="mx-3 fw-semibold">Contact </b-nav-item>
           </b-navbar-nav>
