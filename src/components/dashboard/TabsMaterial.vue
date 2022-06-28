@@ -1,5 +1,5 @@
 <template>
-    <div class="container my-4">
+    <div class="container my-4" @click="toPage('DetailMaterialsDashboard')">
         <div class="d-flex">
             <div>
                 <b-avatar class="bg-mx-blue-green" size="3em">
@@ -33,8 +33,11 @@
 <script>
 export default {
     name: 'TabsMaterial',
-    props: {
-    }
+    methods: {
+        toPage (routeName) {
+            this.$router.push({ name: routeName, params: { id: 1, materialId: 4212 } })
+        }
+    },
 }
 </script>
 

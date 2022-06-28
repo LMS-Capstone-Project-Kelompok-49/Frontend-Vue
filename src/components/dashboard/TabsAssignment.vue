@@ -1,13 +1,28 @@
 <template>
     <div class="container my-4">
-        <div class="card" @click="toPage('DetailAssignmentDashboard')">
+        <div class="card" v-if="type === 1" @click="toPage('DetailAssignmentDashboard', 1)">
             <div class="card-body">
                 <div class="d-flex justify-content-around list-card">
-                    <div class="text-mx-green">
-                        <i class="fas fa-list-ul"></i>  
+                    <div>
+                        <i class="fas fa-list-ul text-mx-green mr-2"></i>  
+                        Tugas UI & UX Mobile App
                     </div>
                     <div>
-                        Tugas UI & UX Mobile App
+                        <span class="d-block">11:59 PM</span>
+                        <span class="text-mx-green">Due April 21, 2022</span>
+                    </div>
+                    <div>
+                        <span class="text-primary">Need Submit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" v-if="type === 2" @click="toPage('DetailAssignmentDashboard', 2)">
+            <div class="card-body">
+                <div class="d-flex justify-content-around list-card">
+                    <div>
+                        <i class="fas fa-pen-nib text-danger mr-2"></i>
+                        Quiz Practice 3
                     </div>
                     <div>
                         <span class="d-block">11:59 PM</span>
@@ -25,9 +40,15 @@
 <script>
 export default {
     name: 'TabsAssignment',
+    props: {
+        type: {
+            default: 1,
+            type: Number
+        }
+    },
     methods: {
-        toPage (routeName) {
-            this.$router.push({ name: routeName, params: { id: 1, code: 4212 } })
+        toPage (routeName, typeAss) {
+            this.$router.push({ name: routeName, params: { id: 1, code: typeAss } })
         }
     },
 }

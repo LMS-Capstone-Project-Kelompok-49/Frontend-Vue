@@ -42,7 +42,7 @@
                         <TabsMaterial v-for="n in 2" :key="n"/>
                     </b-tab>
                     <b-tab title="Assignments">
-                        <TabsAssignment v-for="n in 3" :key="n" />
+                        <TabsAssignment v-for="n in 2" :key="n" :type="n" />
                     </b-tab>
                     <b-tab title="Members">
                         <TabsMember />

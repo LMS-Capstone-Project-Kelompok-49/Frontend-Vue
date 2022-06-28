@@ -85,12 +85,23 @@ export default {
       close: false
     }
   },
+  mounted() {
+    this.checkIsLogin()
+  },
   methods: {
     toPage (routeName) {
       this.$router.push({ name: routeName })
     },
     signOut () {
       this.$store.dispatch('main/signOut')
+    },
+    checkIsLogin () {
+      const loginLogic = this.$store.state.main.isLogin
+      if(loginLogic) {
+        console.log("berhasil Masuk");
+      } else {
+        this.$router.push({ name: 'LoginPage' })
+      }
     }
   }
 }

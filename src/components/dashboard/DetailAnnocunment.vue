@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card rounded">
         <div class="card-body">
             <label class="font-weight-bolder title">Announcements</label>
             <div class="d-flex justify-content-between">
@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style scoped>
+.card {
+    border-radius: 12px;
+}
 .title {
     font-size: .8em;
 }

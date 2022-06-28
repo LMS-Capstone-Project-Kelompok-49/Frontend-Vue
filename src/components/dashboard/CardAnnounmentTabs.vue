@@ -1,5 +1,5 @@
 <template>
-    <div class="card border-0 my-4 p-1">
+    <div class="card border-0 my-4 p-1" @click="toPage('DetailAssignmentDashboard')">
         <div class="card-body p-0">
             <div class="d-flex justify-content-around list-card">
                 <div>
@@ -24,7 +24,11 @@
 <script>
 export default {
     name: 'CardAnnounment',
-    
+    methods: {
+        toPage (routeName) {
+            this.$router.push({ name: routeName, params: { id: 1, code: 1 } })
+        }
+    },
 }
 </script>
 
