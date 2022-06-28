@@ -66,7 +66,7 @@
                             <label class="text-muted">Introduction of UI/UX</label>
                         </div>
                         <div>
-                            <label class="text-muted me-3">15.00</label>`
+                            <label class="text-muted me-3">15.00</label>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                             <label class="text-muted">Introduction of UI/UX</label>
                         </div>
                         <div>
-                            <label class="text-muted me-3"></label>`
+                            <label class="text-muted me-3"></label>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                             <label class="text-muted">Introduction of UI/UX</label>
                         </div>
                         <div>
-                            <label class="text-muted me-3">15.00</label>`
+                            <label class="text-muted me-3">15.00</label>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                             <label class="text-muted">Introduction of UI/UX</label>
                         </div>
                         <div>
-                            <label class="text-muted me-3"></label>`
+                            <label class="text-muted me-3"></label>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                             <label class="text-muted">Introduction of UI/UX</label>
                         </div>
                         <div>
-                            <label class="text-muted me-3">15.00</label>`
+                            <label class="text-muted me-3">15.00</label>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                             <label class="text-muted">Introduction of UI/UX</label>
                         </div>
                         <div>
-                            <label class="text-muted me-3"></label>`
+                            <label class="text-muted me-3"></label>
                         </div>
                     </div>
                 </div>
