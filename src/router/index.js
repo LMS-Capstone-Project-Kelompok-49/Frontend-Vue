@@ -74,6 +74,38 @@ const routes = [
             name: 'CertificateDashboard',
             component: () => import('../views/dashboard/CertificateView.vue')
           },
+          {
+            path: 'notification',
+            name: 'NotificationDashboard',
+            component: () => import('../views/dashboard/NotificationView.vue')
+          },
+          {
+            path: 'profile',
+            name: 'ProfileDashboard',
+            component: () => import('../views/dashboard/ProfileView.vue')
+          },
+          {
+            path: 'course',
+            component: TemplateViewPages,
+            children: [
+              {
+                path: ':id',
+                component: TemplateViewPages,
+                children: [
+                  {
+                    path: '',
+                    name: 'DetailCourseDashboard',
+                    component: () => import('../views/dashboard/DetailCourse.vue')
+                  },
+                  {
+                    path: ':code',
+                    name: 'DetailAssignmentDashboard',
+                    component: () => import('../views/dashboard/DetailAssignment.vue')
+                  },
+                ]
+              }
+            ]
+          },
         ]
       },
     ]

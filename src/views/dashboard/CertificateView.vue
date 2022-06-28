@@ -7,7 +7,7 @@
 <script>
 import CertificateContent from '@/components/dashboard/CertificateContent.vue'
 export default {
-  name: 'HomeDashboard',
+  name: 'CertificateDashboard',
   components: {
     CertificateContent
   }

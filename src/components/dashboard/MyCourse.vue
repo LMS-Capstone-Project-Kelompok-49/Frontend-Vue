@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-info btn-block m-0 btn-courses bg-mx-green border-mx-green">
+        <button class="btn btn-info btn-block m-0 btn-courses bg-mx-green border-mx-green" @click="toDetail(1)">
             View Class
         </button>
     </div>
@@ -45,7 +45,12 @@
 
 <script>
 export default {
-    name: 'MyCourseDashboard'
+    name: 'MyCourseDashboard',
+    methods: {
+        toDetail (idCourse) {
+            this.$router.push({ name: 'DetailCourseDashboard', params: {id:idCourse } })
+        }
+    },
 }
 </script>
 
