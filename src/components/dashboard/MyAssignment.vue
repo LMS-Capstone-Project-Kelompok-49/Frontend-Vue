@@ -17,7 +17,7 @@
                 <label class="text-muted">Due April 21, 2022</label>
             </div>
             <div class="assignment-dot">
-                <button type="button" class="btn btn-info rounded-pill">Add Task</button>
+                <button type="button" class="btn btn-info rounded-pill" @click="toPage('DetailAssignmentDashboard')">Add Task</button>
             </div>
         </div>
     </div>
@@ -25,7 +25,12 @@
 
 <script>
 export default {
-    name: 'MyAssignmentDashboard'
+    name: 'MyAssignmentDashboard',
+    methods: {
+        toPage (routeName) {
+            this.$router.push({ name: routeName, params: { id: 1, code: 2 } })
+        }
+    },
 }
 </script>
 

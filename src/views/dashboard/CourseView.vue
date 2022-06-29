@@ -8,7 +8,7 @@
 <script>
 import CourseContent from '@/components/dashboard/CourseContent.vue'
 export default {
-  name: 'HomeDashboard',
+  name: 'CourseDashboard',
   components: {
     CourseContent
   }
