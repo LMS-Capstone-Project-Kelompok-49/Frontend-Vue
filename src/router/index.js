@@ -74,6 +74,9 @@ const routes = [
             name: 'CertificateDashboard',
             component: () => import('../views/dashboard/CertificateView.vue')
           },
+          {
+            path: ''
+          }
         ]
       },
     ]
