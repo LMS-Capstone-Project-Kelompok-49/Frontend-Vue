@@ -142,7 +142,12 @@
 
 <script>
 export default {
-  name: 'CardsInfoItem'
+  name: 'CardsInfoItem',
+  methods: {
+      toDetail () {
+        this.$router.push({ name: 'CheckoutPage' })
+      }
+  },
 }
 </script>
 

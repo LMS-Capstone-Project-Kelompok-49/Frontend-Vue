@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import HomePageLayout from '@/layout/HomeLayout.vue'
 import TemplateViewPages from '@/layout/DefaultView.vue'
 import DashboardTemplate from '@/layout/DashboardLayout.vue'
+import ParentTemplate from '@/layout/ParentView.vue'
 import HomeView from '../views/HomeView.vue'
 
 Vue.use(VueRouter)
@@ -24,13 +25,30 @@ const routes = [
           },
           {
             path: 'courses',
-            name: 'CoursesPage',
-            component: () => import('../views/CoursesView.vue')
-          },
-          {
-            path: 'courses/detail',
-            name: 'DetailCoursePage',
-            component: () => import('../views/DetailCourseView.vue')
+            component: ParentTemplate,
+            children: [
+              {
+                path: '',
+                name: 'CoursesPage',
+                component: () => import('../views/CoursesView.vue')
+              },
+              {
+                path: ':id',
+                component: ParentTemplate,
+                children: [
+                  {
+                    path: '',
+                    name: 'DetailCoursePage',
+                    component: () => import('../views/DetailCourseView.vue')
+                  },
+                  {
+                    path: 'checkout',
+                    name: 'CheckoutPage',
+                    component: () => import('../views/transactions/CheckoutView.vue')
+                  },
+                ]
+              },
+            ]
           },
           {
             path: 'contact',
@@ -41,7 +59,23 @@ const routes = [
             path: 'request',
             name: 'RequestPage',
             component: () => import('../views/RequestView.vue')
-          }
+          },
+          {
+            path: 'transaction',
+            component: ParentTemplate,
+            children: [
+              {
+                path: '',
+                name: 'TransactionsPage',
+                component: () => import('../views/transactions/TransactionsView.vue')
+              },
+              {
+                path: ':code',
+                name: 'PayPage',
+                component: () => import('../views/transactions/PayView.vue')
+              },
+            ]
+          },
         ]
       },
       {
@@ -85,11 +119,11 @@ const routes = [
           },
           {
             path: 'course',
-            component: TemplateViewPages,
+            component: ParentTemplate,
             children: [
               {
                 path: ':id',
-                component: TemplateViewPages,
+                component: ParentTemplate,
                 children: [
                   {
                     path: '',

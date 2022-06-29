@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     toDetail () {
-        this.$router.push({ name: 'DetailCoursePage' })
+        this.$router.push({ name: 'DetailCoursePage', params: { id: 1 } })
     }
   },
 }
