@@ -4,7 +4,10 @@ import router from '../router/index'
 const state = () => ({
   loginMessage: '',
   isLogin: false,
-  token: ''
+  token: '',
+  transactions: [
+    { name: 'ada' }
+  ],
 })
 
 const mutations = {
@@ -22,7 +25,7 @@ const mutations = {
 const actions = {
   async loginCheck (store, payload) {
     try {
-      const link = 'http://54.236.5.123/auth/login'
+      const link = 'http://3.95.181.246/auth/login'
       await axios.post(link,
         {
           email: payload.email,
@@ -56,7 +59,13 @@ const actions = {
   signOut (store) {
     store.commit('setIsLogin', false)
     router.push({ name: 'Home' })
-  }
+  },
+  checkIsLogin ({state}) {
+    if(!state.isLogin){
+      router.push({ name: 'LoginPage' })
+    }
+  },
+
 }
 
 export default {

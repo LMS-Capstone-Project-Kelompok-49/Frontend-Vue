@@ -14,7 +14,7 @@ const mutations = {
 const actions = {
   async registerPost (store, payload) {
     console.log(payload);
-    const link = 'http://54.236.5.123/auth/register'
+    const link = 'http://3.95.181.246/auth/register'
     await axios.post(link,
     {
       name: payload.name,

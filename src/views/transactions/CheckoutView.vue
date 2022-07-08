@@ -10,6 +10,14 @@ export default {
   name: 'CheckoutPage',
   components: {
     CheckoutContent
-  }
+  },
+  mounted() {
+    this.checkIsLogin()
+  },
+  methods: {
+    checkIsLogin () {
+      this.$store.dispatch('main/checkIsLogin')
+    }
+  },
 }
 </script>

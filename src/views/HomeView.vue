@@ -48,5 +48,13 @@ export default {
       titleCourse: 'Explore Your Courses'
     }
   },
+  mounted () {
+    this.getCourseAll()
+  },
+  methods: {
+    getCourseAll () {
+      this.$store.dispatch('home/getAllCourses')
+    }
+  },
 }
 </script>

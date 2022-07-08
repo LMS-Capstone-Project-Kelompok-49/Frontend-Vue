@@ -27,12 +27,12 @@
                 </a>
             </li>
 
-            <li class="nav-link">
+            <!-- <li class="nav-link">
                 <a href="#">
                     <i class='bx bx-message-rounded-dots icon' ></i>
                     <span class="text nav-text">Chats</span>
                 </a>
-            </li>
+            </li> -->
 
             <li class="nav-link">
                 <a @click="toPage('CertificateDashboard')">
@@ -41,12 +41,12 @@
                 </a>
             </li>
 
-            <li class="nav-link">
+            <!-- <li class="nav-link">
                 <a href="#">
                     <i class='bx bx-cog icon'></i>
                     <span class="text nav-text">Setting</span>
                 </a>
-            </li>
+            </li> -->
           </ul>
         </div>
 

@@ -2,27 +2,12 @@
     <div class="cards my-5">
         <h3 class="text-dark">Browse By Category</h3>
         <div class="d-flex text-center align-items-center flex-wrap">
-            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center m-1">
-                <img :src="require('@/assets/images/logo_category.png')" alt="...">
-                <h5 class="card-title m-4">Design</h5>
-            </b-button>
-            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center m-1">
-                <img :src="require('@/assets/images/logo_category.png')" alt="...">
-                <h5 class="card-title m-4">Design</h5>
-            </b-button>
-            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center m-1">
-                <img :src="require('@/assets/images/logo_category.png')" alt="...">
-                <h5 class="card-title m-4">Design</h5>
-            </b-button>
-            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center m-1">
-                <img :src="require('@/assets/images/logo_category.png')" alt="...">
-                <h5 class="card-title m-4">Design</h5>
-            </b-button>
-            <b-button variant="outline-primary" class="border-mx-green btn-category d-flex align-items-center m-1">
-                <img :src="require('@/assets/images/logo_category.png')" alt="...">
-                <h5 class="card-title m-4">Design</h5>
-            </b-button>
-            
+            <div v-for="(value, index) in getAllTypeCourse" :key="index" class="mx-1 my-1">
+                <b-button variant="outline-info" class="border-mx-green btn-category d-flex align-items-center" type="button" @click="getCourseByType(index)" :class="{ 'bg-mx-green text-white': index === activeType }" >
+                    <img :src="require('@/assets/images/logo_category.png')" alt="...">
+                    <h5 class="card-title m-4">{{ value.coursetype }}</h5>
+                </b-button>            
+            </div>
         </div>
         <!-- <div class="row">
             <div class="col-sm-12 col-md-2 mt-4" v-for="n in 8" :key="n">
@@ -37,7 +22,27 @@
 
 <script>
 export default {
-  name: 'CategoryCardsItem'
+  name: 'CategoryCardsItem',
+  computed: {
+    getAllTypeCourse () {
+        return this.$store.state.home.typeCourses
+    },
+    activeType () {
+        return this.$store.state.home.activeType
+    }
+  },
+  mounted() {
+      this.clearActiveType()
+  },
+  methods: {
+    getCourseByType (TypeId) {
+        console.log(TypeId)
+        this.$store.dispatch('home/getCoursesFilterByType', TypeId)
+    },
+    clearActiveType () {
+        this.$store.dispatch('home/clearActiveType')
+    }
+  },
 }
 </script>
 

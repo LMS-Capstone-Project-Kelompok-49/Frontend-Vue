@@ -1,17 +1,27 @@
 <template>
   <div class="home container">
-    <div class="row mt-3">
-      <div class="row">
-        <div class="col-8 d-flex-column">
-            <DetailCourseItem />  
+    <div v-if="ifTrueCourse">
+      <div v-if="getCourse">
+        <div class="row mt-3" >
+          <div class="row">
+            <div class="col-8 d-flex-column">
+                <DetailCourseItem />  
+            </div>
+            <div class="col-4 d-flex-column">
+                <CardsInfoItem />
+            </div>
+          </div>
         </div>
-        <div class="col-4 d-flex-column">
-            <CardsInfoItem />
+        <div>
+            <TestimonialItem />
         </div>
       </div>
     </div>
-    <div>
-        <TestimonialItem />
+    <div v-else class="mt-5">
+      <div class="d-flex align-items-center mt-5">
+        <strong>Loading...</strong>
+        <b-spinner class="ml-auto"></b-spinner>
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +37,24 @@ export default {
     DetailCourseItem,
     CardsInfoItem,
     TestimonialItem,
-  }
+  },
+  computed: {
+    getCourse () {
+      return this.$store.state.home.course
+    },
+    ifTrueCourse () {
+      return (this.$store.state.home.courseID === this.$route.params.id)
+    }
+  },
+  mounted() {
+    this.getDetailCourse()
+  },
+  methods: {
+    getDetailCourse () {
+      const DetailId = this.$route.params.id
+      this.$store.dispatch('home/GetCourseById', DetailId)
+    }
+  },
+
 }
 </script>

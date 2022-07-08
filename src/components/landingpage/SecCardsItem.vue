@@ -10,7 +10,7 @@
                         </div>
                     </a>
                     <h5 class="card-title">Certificate</h5>
-                    <p class="card-text">Kamu akan mendapatkan sertifikat kursus yang kamu ikuti dengan gratis</p>
+                    <p class="card-text">You will get a certificate of the course you took for free and an official certificate.</p>
                 </div>
             </div>
             <div class="card text-bg-light border-light text-center mb-3 mr-5 ml-5" style="max-width: 18rem;">
@@ -21,7 +21,7 @@
                         </div>
                     </a>
                     <h5 class="card-title">Expert Tutoring</h5>
-                    <p class="card-text">Tutor yang sangat berpengelaman akan membantu kegiatan pembelajaranmu</p>
+                    <p class="card-text">A very resourceful and trusted tutor who will help your learning activities here.</p>
                 </div>
             </div>
             <div class="card text-bg-light border-light text-center mb-3 ml-5" style="max-width: 18rem;">
@@ -32,7 +32,7 @@
                         </div>
                     </a>
                     <h5 class="card-title">Variety Methods</h5>
-                    <p class="card-text">Berbagai macam metode pembelajaran yang digunakan pada platform ini</p>
+                    <p class="card-text">There are various learning methods that can be used on this platform and are easy to understand.</p>
                 </div>
             </div>
         </div>

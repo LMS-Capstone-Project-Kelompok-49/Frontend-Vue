@@ -1,13 +1,16 @@
 <template>
-    <div class="cards pt-5 mt-5">
-        <h2 class="titlecolor mb-5 mt-5" v-if="!title">Explore Your Courses</h2>
-        <div v-if="!typeTitle">
-            <h2 class="titlecolor mb-5 mt-5" v-if="title">{{ title }}</h2>
-        </div>
-        <div v-if="typeTitle">
-            <h3 v-if="title">{{ title }}</h3>
+    <div class="cards pt-5">
+        <div v-if="title">
+            <h2 class="titlecolor mb-5 mt-5" v-if="!title">Explore Your Courses</h2>
+            <div v-if="!typeTitle">
+                <h2 class="titlecolor mb-5 mt-5" v-if="title">{{ title }}</h2>
+            </div>
+            <div v-if="typeTitle">
+                <h3 v-if="title">{{ title }}</h3>
+            </div>
         </div>
         <div class="row mb-5">
+            <!-- <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="(value, index) in getCourses" :key="index"> -->
             <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="n in 6" :key="n">
                 <div class="card border-light">
                     <div class="card-body">
@@ -66,6 +69,11 @@ export default {
   props: {
       title: String,
       typeTitle: Number,
+  },
+  computed: {
+      getCourses () {
+        return this.$store.state.home.courses
+      }
   },
   data() {
       return {

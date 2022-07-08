@@ -76,6 +76,11 @@ const routes = [
               },
             ]
           },
+          {
+            path: 'search',
+            name: 'SearchPage',
+            component: () => import('../views/SearchView.vue')
+          },
         ]
       },
       {
