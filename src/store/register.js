@@ -27,13 +27,16 @@ const actions = {
           alert('Register Berhasil')
           store.commit('setInfo', '')
           router.push({ name: 'LoginPage' })
+        } else {
+          store.commit('setInfo', 'Register Failed!!')
         }
     })
     .catch((error) => {
         console.log("error Axios");
         console.log(error);
         if(error.response){
-          store.commit('setInfo', error.response.data.messages)
+          // store.commit('setInfo', error.response.data.messages)
+          store.commit('setInfo', 'Register Failed!!')
         }
     })
   },

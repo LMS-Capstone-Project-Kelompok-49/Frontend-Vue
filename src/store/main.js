@@ -38,6 +38,8 @@ const actions = {
               store.commit('setIsLogin', true)
               store.commit('setToken', Response.data.token)
               router.push({ name: 'Home' })
+            } else {
+              store.commit('setLoginMessage', 'Login Failed!!')
             }
         })
         .catch((error) => {
@@ -45,6 +47,7 @@ const actions = {
           console.log(error);
           if(error.response.data){
             store.commit('setLoginMessage', error.response.data.messages)
+            store.commit('setLoginMessage', 'Login Failed!!')
           }
         })
 
