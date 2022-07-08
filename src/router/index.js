@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import HomePageLayout from '@/layout/HomeLayout.vue'
 import TemplateViewPages from '@/layout/DefaultView.vue'
 import DashboardTemplate from '@/layout/DashboardLayout.vue'
+import AdminTemplate from '@/layout/AdminLayout.vue'
 import ParentTemplate from '@/layout/ParentView.vue'
 import HomeView from '../views/HomeView.vue'
 
@@ -92,6 +93,22 @@ const routes = [
         path: 'register',
         name: 'RegisterPage',
         component: () => import('../views/RegisterView.vue')
+      },
+      {
+        path: 'admin',
+        component: AdminTemplate,
+        children: [
+          {
+            path: '',
+            name: 'HomeAdmin',
+            component: () => import('../views/admin/HomeAdmin.vue')
+          },
+          {
+            path: 'courses',
+            name: 'CoursesAdmin',
+            component: () => import('../views/admin/CourseAdmin.vue')
+          },
+        ]
       },
       {
         path: 'dashboard',

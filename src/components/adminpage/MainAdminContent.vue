@@ -1,0 +1,36 @@
+<template>
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-4 d-flex-column">
+                <h3 class="sub-title">My Course</h3>
+                <MyCourseDashboard v-for="n in 2" :key="n" />
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-8 d-flex-column">
+                <div class="mb-5">
+                    <h3 class="sub-title">Your Progress</h3>
+                    <BarChart />
+                </div>
+
+                <div class="my-5">
+                    <h3 class="sub-title">Assignments</h3>
+                    <MyAssignmentDashboard />
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import MyCourseDashboard from '@/components/dashboard/MyCourse.vue'
+import MyAssignmentDashboard from '@/components/dashboard/MyAssignment.vue'
+import BarChart from '@/components/dashboard/MyChart.vue'
+export default {
+  name: 'MainAdminContent',
+  components: {
+      MyCourseDashboard,
+      MyAssignmentDashboard,
+      BarChart
+  },
+}
+</script>
