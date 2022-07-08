@@ -11,12 +11,18 @@
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
-          
+
           <b-navbar-nav class="m-auto">
             <b-nav-item :to="{ name: 'Home' }" class="mx-3 fw-semibold">Home</b-nav-item>
             <b-nav-item :to="{ name: 'CoursesPage' }" class="mx-3 fw-semibold">Courses</b-nav-item>
             <b-nav-item :to="{ name: 'ContactPage' }" class="mx-3 fw-semibold">Contact</b-nav-item>
             <b-nav-item :to="{ name: 'RequestPage' }" class="mx-3 fw-semibold">Request</b-nav-item>
+          </b-navbar-nav>
+
+          <b-navbar-nav>
+            <b-nav-item :to="{ name: 'SearchPage' }" class="pr-3 fw-semibold mr-2">
+              <i class="fas fa-search text-mx-green"></i>
+            </b-nav-item>
           </b-navbar-nav>
           
           <b-navbar-nav v-if="isLogin === false">
@@ -32,6 +38,7 @@
                 <em>User</em>
               </template>
               <b-dropdown-item :to="{ name: 'HomeDashboard' }">Dashboard</b-dropdown-item>
+              <b-dropdown-item :to="{ name: 'TransactionsPage' }">Transaction</b-dropdown-item>
               <b-dropdown-item @click="signOut">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>

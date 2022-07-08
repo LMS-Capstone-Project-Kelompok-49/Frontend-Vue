@@ -5,10 +5,10 @@
 
       <div class="mt-4 w50 m-auto">
         <label class="my-4 text-detail">
-          Terima kasih telah tertarik dengan website kursus kami, kami akan senantiasa menjawab semua pertanyaan yang kamu ingin tanyakan terkait kegiatan kursus ini
+          Thank you for being interested in our course website, we will always answer all the questions you want to ask regarding this course activity
         </label>
         <label class="my-3 text-detail">
-          Kamu bisa mengirimkan langsung pertanyaan melalui form di bawah ini, atau kamu bisa menggunakan kontak alternatif yang telah kami sediakan
+          You can send questions directly through the form below, or you can use the alternative contacts we have provided.
         </label>
       </div>
     </div>

@@ -9,6 +9,10 @@
       {{ loginMessage }}
     </div>
 
+    <div v-if="message" class="alert alert-danger" role="alert">
+      {{ message }}
+    </div>
+
     <form class="mt-4 w-lg-50" autocomplete="off" @submit="login">
 
 			<div class="form-group my-4">
@@ -19,7 +23,7 @@
 							<i class="fas fa-envelope"></i>
 						</div>
 					</div>
-					<input v-model="form.email" type="email" class="form-control" id="EmailInput" placeholder="Your Email" required height="250px">
+					<input v-model="form.email" type="text" class="form-control" id="EmailInput" placeholder="Your Email" height="250px">
 				</div>
 			</div>
 
@@ -31,12 +35,12 @@
 							<i class="fas fa-lock"></i>
 						</div>
 					</div>
-					<input v-model="form.password" type="password" class="form-control" id="PasswordInput" placeholder="Your Password" required>
+					<input v-model="form.password" type="password" class="form-control" id="PasswordInput" placeholder="Your Password" >
 				</div>
 			</div>
 
-      <button v-if="!loading" type="submit" class="btn-submit btn btn-success btn-block rounded-pill bg-mx-green border-mx-green p-3 my-4">Sign in</button>
-      <button v-if="loading" type="button" class="btn-submit btn btn-success btn-block rounded-pill bg-mx-green border-mx-green	 p-3" disabled>
+      <button v-if="!loading" type="submit" class="btn-submit btn btn-info btn-block rounded-pill bg-mx-green border-mx-green p-3 my-4">Sign in</button>
+      <button v-if="loading" type="button" class="btn-submit btn btn-info btn-block rounded-pill bg-mx-green border-mx-green	 p-3" disabled>
         <b-spinner label="Spinning"></b-spinner>
       </button>
 		</form>
@@ -55,10 +59,11 @@ export default {
     return {
       message: '',
       form: {
-        name: '',
         email: '',
+        password: ''
       },
-      loading: false
+      loading: false,
+      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/ // eslint-disable-line
     }
   },
   computed: {
@@ -74,7 +79,19 @@ export default {
       event.preventDefault()
       this.emptyLoginMessage()
       this.loading = !this.loading
-      this.$store.dispatch('main/loginCheck', this.form)
+      if (this.form.email !== ''){
+        if(!this.reg.test(this.form.email)){
+          this.message = 'Email must be valid email'
+        } else {
+          if(this.form.password !== '') {
+            this.$store.dispatch('main/loginCheck', this.form)
+          } else {
+            this.message = 'Password must be filled'
+          }
+        }
+      }else {
+        this.message = 'Email must be filled'
+      }
       setTimeout(() => (this.loading = !this.loading), 6000)
     },
     emptyLoginMessage (){

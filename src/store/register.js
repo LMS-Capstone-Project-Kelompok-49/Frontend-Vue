@@ -14,7 +14,7 @@ const mutations = {
 const actions = {
   async registerPost (store, payload) {
     console.log(payload);
-    const link = 'http://54.236.5.123/auth/register'
+    const link = 'http://3.95.181.246/auth/register'
     await axios.post(link,
     {
       name: payload.name,
@@ -27,13 +27,16 @@ const actions = {
           alert('Register Berhasil')
           store.commit('setInfo', '')
           router.push({ name: 'LoginPage' })
+        } else {
+          store.commit('setInfo', 'Register Failed!!')
         }
     })
     .catch((error) => {
         console.log("error Axios");
         console.log(error);
         if(error.response){
-          store.commit('setInfo', error.response.data.messages)
+          // store.commit('setInfo', error.response.data.messages)
+          store.commit('setInfo', 'Register Failed!!')
         }
     })
   },

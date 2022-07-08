@@ -2,9 +2,7 @@
     <div class="title pt-5">
         <h1 class="titlecolor">Easy Learning Anywhere</h1>
         <h1 class="titlecolor">With The Experts</h1>
-        <p class="pt-4">Tingkatkan kemampuan di bidang IT bersama ahlinya.</p>
-        <p>Berbagai macam jenis course yang bisa didapatkan</p>
-        <p>hanya di sini</p>
+        <p class="pt-4">Improve your abilities in the IT field with experts. <br> With various types of courses that you can get and explore only here.</p>
         <b-button :to="{ name: 'RegisterPage' }" variant="info" class="p-2 mt-3 fw-semibold"> Try Now </b-button>
         <button type="button" class="btn btn-outline-success p-2 mt-3 ms-3">Learn More</button>
     </div>

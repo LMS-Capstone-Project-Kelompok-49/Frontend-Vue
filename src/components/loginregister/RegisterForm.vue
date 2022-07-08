@@ -12,7 +12,7 @@
       {{ errorMessage }}
     </div>
     
-		<form class="w-lg-50" autocomplete="off" @submit="Register">
+		<form class="w-lg-50 m-0" autocomplete="off" @submit="Register">
 
       <div class="form-group">
 				<h5 for="NameInput" class="font-weight-bold">Name</h5>
@@ -22,7 +22,7 @@
 							<i class="fas fa-user"></i>
 						</div>
 					</div>
-					<input v-model="form.name" type="text" class="form-control" id="NameInput" placeholder="Your Name" required>
+					<input v-model="form.name" type="text" class="form-control" id="NameInput" placeholder="Your Name">
 				</div>
 			</div>
 
@@ -34,7 +34,7 @@
 							<i class="fas fa-envelope"></i>
 						</div>
 					</div>
-					<input v-model="form.email" type="email" class="form-control" id="EmailInput" placeholder="Your Email" required>
+					<input v-model="form.email" type="text" class="form-control" id="EmailInput" placeholder="Your Email">
 				</div>
 			</div>
 
@@ -46,7 +46,7 @@
 							<i class="fas fa-lock"></i>
 						</div>
 					</div>
-					<input v-model="form.password" type="password" class="form-control" id="PasswordInput" placeholder="Your Password" required>
+					<input v-model="form.password" type="password" class="form-control" id="PasswordInput" placeholder="Your Password">
 				</div>
 			</div>
 
@@ -67,8 +67,8 @@
           <button type="button" class="btn btn-outline-dark btn-block rounded-sm p-3 btn-back" @click="getBack">Back</button>
         </div>
         <div class="col-sm-12 col-md-9 order-0">
-          <button v-if="!loading" type="submit" class="btn btn-success btn-block rounded-pill p-3 bg-mx-green border-mx-green">Sign in</button>
-          <button v-if="loading" type="button" class="btn btn-success btn-block rounded-pill p-3 bg-mx-green border-mx-green" disabled>
+          <button v-if="!loading" type="submit" class="btn btn-info btn-block rounded-pill p-3 bg-mx-green border-mx-green">Sign in</button>
+          <button v-if="loading" type="button" class="btn btn-info btn-block rounded-pill p-3 bg-mx-green border-mx-green" disabled>
             <b-spinner label="Spinning"></b-spinner>
           </button>
         </div>
@@ -90,7 +90,8 @@ export default {
         password: '',
         confirmPassword: '',
       },
-      loading: false
+      loading: false,
+      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/ // eslint-disable-line
     }
   },
   computed: {
@@ -109,15 +110,27 @@ export default {
       event.preventDefault()
       this.emptyError()
       this.loading = !this.loading
-      if (this.form.password.length >= 8){
-        if(this.form.password === this.form.confirmPassword){
-          this.message = ''
-          this.$store.dispatch('register/registerPost', this.form)
+      if(this.form.name !== ''){
+        if(this.form.email !== ''){
+          if(!this.reg.test(this.form.email)) {
+            this.message = 'Email must be email valid'
+          } else {
+              if (this.form.password.length >= 8){
+                if(this.form.password === this.form.confirmPassword){
+                  this.message = ''
+                  this.$store.dispatch('register/registerPost', this.form)
+                } else {
+                  this.message = 'Credential Password do not match'
+                }
+              } else {
+                this.message = 'Password must be 8 character'
+              }
+            }
         } else {
-          this.message = 'Credential Password do not match'
+          this.message = 'Email must be filled'
         }
       } else {
-        this.message = 'Password must 8 character'
+        this.message = 'Name must be filled'
       }
       setTimeout(() => (this.loading = !this.loading), 6000)
     },
@@ -139,7 +152,7 @@ export default {
 }
 @media screen and (min-width: 1024px) {
   .register-wrapper {
-    margin-top: 10%;
+    padding: 3rem;
   }
   form {
     margin-top: 2em;

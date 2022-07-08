@@ -12,7 +12,7 @@
       <CategoryCardsItem />
     </div>
     <div>
-      <ExploreCourseItem :title="'Popular Course'" :typeTitle="3" />
+      <ExploreCourseItem :title="'Top Featured'" :typeTitle="3" />
     </div>
   </div>
 </template>
@@ -30,6 +30,18 @@ export default {
     HeroCourseItem,
     CategoryCardsItem,
     ExploreCourseItem
-  }
+  },
+  mounted () {
+    this.getCourseAll(),
+    this.getTypeAll()
+  },
+  methods: {
+    getTypeAll () {
+      this.$store.dispatch('home/getAllTypeCourses')
+    },
+    getCourseAll () {
+      this.$store.dispatch('home/getAllCourses')
+    }
+  },
 }
 </script>
