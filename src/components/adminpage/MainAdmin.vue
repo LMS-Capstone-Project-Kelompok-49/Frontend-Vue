@@ -1,16 +1,16 @@
 <template>
   <div class="main-dashboard">
-      <MainContent class="mt-5" />
+      <MainAdminContent />
   </div>
 </template>
 
 <script>
-import MainContent from "@/components/dashboard/MainContent.vue";
+import MainAdminContent from "@/components/adminpage/MainAdminContent.vue";
 
 export default {
   name: 'MainAdmin',
   components: {
-      MainContent,
+      MainAdminContent,
   }
 }
 </script>

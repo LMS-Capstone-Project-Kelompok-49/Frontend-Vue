@@ -3,7 +3,7 @@ import router from '../router/index'
 
 const state = () => ({
   loginMessage: '',
-  isLogin: false,
+  isLogin: true,
   token: '',
   transactions: [
     { name: 'ada' }

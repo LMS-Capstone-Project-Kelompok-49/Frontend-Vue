@@ -108,6 +108,48 @@ const routes = [
             name: 'CoursesAdmin',
             component: () => import('../views/admin/CourseAdmin.vue')
           },
+          {
+            path: 'certificate',
+            name: 'CertificateAdmin',
+            component: () => import('../views/dashboard/CertificateView.vue')
+          },
+          {
+            path: 'notification',
+            name: 'NotificationAdmin',
+            component: () => import('../views/dashboard/NotificationView.vue')
+          },
+          {
+            path: 'profile',
+            name: 'ProfileAdmin',
+            component: () => import('../views/dashboard/ProfileView.vue')
+          },
+          {
+            path: 'course',
+            component: ParentTemplate,
+            children: [
+              {
+                path: ':id',
+                component: ParentTemplate,
+                children: [
+                  {
+                    path: '',
+                    name: 'DetailCourseAdmin',
+                    component: () => import('../views/admin/DetailCourseAdmin.vue')
+                  },
+                  {
+                    path: ':code',
+                    name: 'DetailAssignmentDashboard',
+                    component: () => import('../views/dashboard/DetailAssignment.vue')
+                  },
+                  {
+                    path: 'material/:materialId',
+                    name: 'DetailMaterialsDashboard',
+                    component: () => import('../views/dashboard/DetailMaterials.vue')
+                  },
+                ]
+              }
+            ]
+          },
         ]
       },
       {
