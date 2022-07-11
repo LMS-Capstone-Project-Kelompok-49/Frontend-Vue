@@ -115,13 +115,13 @@ const routes = [
           },
           {
             path: 'notification',
-            name: 'NotificationAdmin',
-            component: () => import('../views/dashboard/NotificationView.vue')
+            name: 'NotificationViewAdmin',
+            component: () => import('../views/admin/NotificationAdmin.vue')
           },
           {
             path: 'profile',
             name: 'ProfileAdmin',
-            component: () => import('../views/dashboard/ProfileView.vue')
+            component: () => import('../views/admin/ProfileAdmin.vue')
           },
           {
             path: 'course',
