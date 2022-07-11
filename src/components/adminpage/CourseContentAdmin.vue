@@ -17,18 +17,18 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-4"  v-for="n in 6" :key="n">
-                <MyCourseDashboard />
+                <MyCourseAdmin />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import MyCourseDashboard from '@/components/dashboard/MyCourse.vue'
+import MyCourseAdmin from '@/components/adminpage/MyCourseAdmin.vue'
 export default {
   name: 'CourseContentAdmin',
   components: {
-      MyCourseDashboard,
+      MyCourseAdmin,
   },
   data() {
       return {
