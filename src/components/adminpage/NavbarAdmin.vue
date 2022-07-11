@@ -18,7 +18,7 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
 
-            <button type="button" class="btn btn-info position-relative mx-5 rounded-circle" @click="toPage('NotificationDashboard')">
+            <button type="button" class="btn btn-info position-relative mx-5 rounded-circle" @click="toPage('NotificationViewAdmin')">
               <i class="fas fa-bell"></i>
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 99+
@@ -31,7 +31,7 @@
               <template #button-content>
                 <em>User</em>
               </template>
-              <b-dropdown-item @click="toPage('ProfileDashboard')">Profile</b-dropdown-item>
+              <b-dropdown-item @click="toPage('ProfileAdmin')">Profile</b-dropdown-item>
               <b-dropdown-item @click="signOut">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>

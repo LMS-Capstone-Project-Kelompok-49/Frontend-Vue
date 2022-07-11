@@ -1,16 +1,16 @@
 <template>
   <div class="container-fluid d-flex-column">
     <h2>My Course</h2>
-    <CourseContent />
+    <CourseContentAdmin />
   </div>
 </template>
 
 <script>
-import CourseContent from '@/components/dashboard/CourseContent.vue'
+import CourseContentAdmin from '@/components/adminpage/CourseContentAdmin.vue'
 export default {
   name: 'CourseAdmin',
   components: {
-    CourseContent
+    CourseContentAdmin
   }
 }
 </script>
