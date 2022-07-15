@@ -13,21 +13,21 @@
         <b-collapse id="nav-collapse" is-nav>
 
           <b-navbar-nav class="m-auto">
-            <b-nav-item :to="{ name: 'Home' }" class="mx-3 fw-semibold">Home</b-nav-item>
-            <b-nav-item :to="{ name: 'CoursesPage' }" class="mx-3 fw-semibold">Courses</b-nav-item>
-            <b-nav-item :to="{ name: 'ContactPage' }" class="mx-3 fw-semibold">Contact</b-nav-item>
-            <b-nav-item :to="{ name: 'RequestPage' }" class="mx-3 fw-semibold">Request</b-nav-item>
+            <b-nav-item @click="toPage('Home')" class="mx-3 fw-semibold">Home</b-nav-item>
+            <b-nav-item @click="toPage('CoursesPage')"  class="mx-3 fw-semibold">Courses</b-nav-item>
+            <b-nav-item @click="toPage('ContactPage')" class="mx-3 fw-semibold">Contact</b-nav-item>
+            <b-nav-item @click="toPage('RequestPage')" class="mx-3 fw-semibold">Request</b-nav-item>
           </b-navbar-nav>
 
           <b-navbar-nav>
-            <b-nav-item :to="{ name: 'SearchPage' }" class="pr-3 fw-semibold mr-2">
+            <b-nav-item @click="toPage('SearchPage')" class="pr-3 fw-semibold mr-2">
               <i class="fas fa-search text-mx-green"></i>
             </b-nav-item>
           </b-navbar-nav>
           
           <b-navbar-nav v-if="isLogin === false">
-            <b-nav-item :to="{ name: 'LoginPage' }" class="pr-3 fw-semibold">Login</b-nav-item>
-            <b-button :to="{ name: 'RegisterPage' }" variant="info" class="p-2 fw-semibold">Sign Up</b-button>
+            <b-nav-item @click="toPage('LoginPage')" class="pr-3 fw-semibold">Login</b-nav-item>
+            <b-button @click="toPage('RegisterPage')" variant="info" class="p-2 fw-semibold">Sign Up</b-button>
           </b-navbar-nav>
 
           <b-navbar-nav v-if="isLogin === true">
@@ -37,8 +37,9 @@
               <template #button-content>
                 <em>User</em>
               </template>
-              <b-dropdown-item :to="{ name: 'HomeDashboard' }">Dashboard</b-dropdown-item>
-              <b-dropdown-item :to="{ name: 'TransactionsPage' }">Transaction</b-dropdown-item>
+              <b-dropdown-item :to="{ name: 'HomeDashboard' }" v-if="dataUser.role === 'User'">Dashboard</b-dropdown-item>
+              <b-dropdown-item :to="{ name: 'HomeAdmin' }" v-if="dataUser.role !== 'User'">Dashboard</b-dropdown-item>
+              <b-dropdown-item :to="{ name: 'TransactionsPage' }" v-if="dataUser.role === 'User'">Transaction</b-dropdown-item>
               <b-dropdown-item @click="signOut">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
@@ -55,11 +56,25 @@ export default {
   computed: {
     isLogin () {
       return this.$store.state.main.isLogin
+    },
+    dataUser () {
+      return { role: this.$store.state.main.role, user: this.$store.state.main.user }
     }
   },
+  mounted () {
+    this.checkRole()
+  },
   methods: {
+    toPage (routeName) {
+      this.$router.push({ name: routeName })
+    },
     signOut () {
       this.$store.dispatch('main/signOut')
+    },
+    checkRole () {
+      if(this.isLogin){
+        console.log("true mint loginnya");
+      }
     }
   }
 }

@@ -4,10 +4,12 @@ import router from '../router/index'
 const state = () => ({
   loginMessage: '',
   isLogin: true,
+  role: 'Admin',
   token: '',
   transactions: [
     { name: 'ada' }
   ],
+  user: []
 })
 
 const mutations = {
@@ -24,12 +26,20 @@ const mutations = {
 
 const actions = {
   async loginCheck (store, payload) {
+    console.log(payload.email);
     try {
-      const link = 'http://3.95.181.246/auth/login'
+      const link = 'https://3.95.181.246/auth/login'
       await axios.post(link,
         {
           email: payload.email,
           password: payload.password
+        },
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+          }
         })
         .then(Response => {
             console.log(Response)
@@ -39,15 +49,15 @@ const actions = {
               store.commit('setToken', Response.data.token)
               router.push({ name: 'Home' })
             } else {
-              store.commit('setLoginMessage', 'Login Failed!!')
+              store.commit('setLoginMessage', 'Login Failed but can!!')
             }
         })
         .catch((error) => {
           console.log("error Axios");
           console.log(error);
+          store.commit('setLoginMessage', 'Login Failed!!')
           if(error.response.data){
             store.commit('setLoginMessage', error.response.data.messages)
-            store.commit('setLoginMessage', 'Login Failed!!')
           }
         })
 

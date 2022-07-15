@@ -28,25 +28,12 @@
             </li>
 
             <li class="nav-link">
-                <a href="#">
-                    <i class='bx bx-message-rounded-dots icon' ></i>
-                    <span class="text nav-text">Chats</span>
-                </a>
-            </li>
-
-            <li class="nav-link">
                 <a @click="toPage('CertificateDashboard')">
                     <i class='bx bx-certification icon'></i>
                     <span class="text nav-text">Certificate</span>
                 </a>
             </li>
 
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bx-cog icon'></i>
-                    <span class="text nav-text">Setting</span>
-                </a>
-            </li>
           </ul>
         </div>
 
@@ -98,7 +85,12 @@ export default {
     checkIsLogin () {
       const loginLogic = this.$store.state.main.isLogin
       if(loginLogic) {
-        console.log("berhasil Masuk");
+        const role = this.$store.state.main.role
+        if(role === 'Admin'){
+          console.log("berhasil Masuk");
+        } else {
+          this.$router.push({ name: 'Home' })
+        }   
       } else {
         this.$router.push({ name: 'LoginPage' })
       }
