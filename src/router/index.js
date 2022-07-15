@@ -139,12 +139,12 @@ const routes = [
                   {
                     path: ':code',
                     name: 'DetailAssignmentAdmin',
-                    component: () => import('../views/dashboard/DetailAssignmentAdmin.vue')
+                    component: () => import('../views/admin/DetailAssignmentAdmin.vue')
                   },
                   {
                     path: 'material/:materialId',
                     name: 'DetailMaterialsAdmin',
-                    component: () => import('../views/dashboard/DetailMaterialsAdmin.vue')
+                    component: () => import('../views/admin/DetailMaterialsAdmin.vue')
                   },
                 ]
               }
