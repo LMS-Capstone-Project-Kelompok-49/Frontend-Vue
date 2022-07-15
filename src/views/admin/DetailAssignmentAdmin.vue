@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AssignmentContent from '@/components/dashboard/AssignmentContent.vue'
+import AssignmentContent from '@/components/adminpage/AssignmentContentAdmin.vue'
 export default {
   name: 'DetailAssignmentAdmin',
   components: {

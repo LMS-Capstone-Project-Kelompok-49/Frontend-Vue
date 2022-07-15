@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import DetailSilabus from '@/components/dashboard/DetailSilabus.vue'
+import DetailSilabus from '@/components/adminpage/DetailSilabusAdmin.vue'
 
 export default {
   name: 'MainDetailContentAdmin',
