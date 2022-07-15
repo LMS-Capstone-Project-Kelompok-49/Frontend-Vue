@@ -138,13 +138,13 @@ const routes = [
                   },
                   {
                     path: ':code',
-                    name: 'DetailAssignmentDashboard',
-                    component: () => import('../views/dashboard/DetailAssignment.vue')
+                    name: 'DetailAssignmentAdmin',
+                    component: () => import('../views/dashboard/DetailAssignmentAdmin.vue')
                   },
                   {
                     path: 'material/:materialId',
-                    name: 'DetailMaterialsDashboard',
-                    component: () => import('../views/dashboard/DetailMaterials.vue')
+                    name: 'DetailMaterialsAdmin',
+                    component: () => import('../views/dashboard/DetailMaterialsAdmin.vue')
                   },
                 ]
               }
