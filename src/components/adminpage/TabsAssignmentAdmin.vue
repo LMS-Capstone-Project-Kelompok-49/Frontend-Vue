@@ -12,7 +12,7 @@
                         <span class="text-mx-green">Due April 21, 2022</span>
                     </div>
                     <div>
-                        <span class="text-primary">Need Submit</span>
+                        <span class="text-primary">0/3 have turned in </span>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <span class="text-mx-green">Due April 21, 2022</span>
                     </div>
                     <div>
-                        <span class="text-primary">Need Submit</span>
+                        <span class="text-primary">0/3 have turned in </span>
                     </div>
                 </div>
             </div>

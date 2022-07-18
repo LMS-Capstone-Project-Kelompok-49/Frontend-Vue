@@ -1,32 +1,23 @@
 <template>
     <div class="container my-4" @click="toPage('DetailMaterialsAdmin')">
-        <div class="d-flex">
             <div>
-                <b-avatar class="bg-mx-blue-green" size="3em">
-                    <i class="fas fa-book icon-material"></i>
-                </b-avatar>
-            </div>
-            <div class="ml-4 w-100">
                 <div class="card card-material">
-                    <div class="card-header p-3">
+                    <div class="card-body d-flex justify-content-between">
+                        <div>
+                            <b-avatar class="bg-mx-blue-green">
+                                <i class="fas fa-book icon-material"></i>
+                            </b-avatar>
+                        </div>
                         <label class="card-title">
                             Materi Pertemuan 12
                         </label><br>
                         <label class="card-subtitle">
-                            Hamidillah Ajie posts new material
+                            Last Update April 21, 2022 at 11:59 PM
                         </label>
-                        <label class="card-subtitle ml-3">
-                            29 April 2022, 08:57 AM
-                        </label>
-                    </div>
-                    <div class="card-body">
-                        <div class="text">
-                            Selamat pagi semuanya, untuk hari ini kita melakukan perkuliahan secara Asynchronous ya. Saya sudah upload materi pertemuan 12.
-                        </div>
+                        <i class="far fa-edit"></i>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </template>
 

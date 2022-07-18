@@ -20,11 +20,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="button-head">
-                    <button class="btn btn-info bg-mx-blue-green border-mx-green">
-                        Create
-                    </button>
-                </div>
             </div>
             <div class="mt-5">
                 <b-tabs 
@@ -39,9 +34,39 @@
                         <p>I'm the first tab</p>
                         </b-tab>
                     <b-tab title="Materials" active>
+                        <div class="d-flex justify-content-between">
+                            <b-input-group class="mt-3 me-5">
+                                <b-form-input placeholder="Search for courses"></b-form-input>
+                                <template #prepend>
+                                <b-input-group-text class="bg-white">
+                                    <i class="fas fa-search"></i>
+                                </b-input-group-text>
+                                </template>
+                            </b-input-group>
+                            <div class="button-head mt-3 ms-5">
+                                <button class="btn btn-info bg-mx-blue-green border-mx-green">
+                                    Create
+                                </button>
+                            </div>
+                        </div>
                         <TabsMaterial v-for="n in 2" :key="n"/>
                     </b-tab>
                     <b-tab title="Assignments">
+                        <div class="d-flex justify-content-between">
+                            <b-input-group class="mt-3 me-5">
+                                <b-form-input placeholder="Search for courses"></b-form-input>
+                                <template #prepend>
+                                <b-input-group-text class="bg-white">
+                                    <i class="fas fa-search"></i>
+                                </b-input-group-text>
+                                </template>
+                            </b-input-group>
+                            <div class="button-head mt-3 ms-5">
+                                <button class="btn btn-info bg-mx-blue-green border-mx-green">
+                                    Create
+                                </button>
+                            </div>
+                        </div>
                         <TabsAssignment v-for="n in 2" :key="n" :type="n" />
                     </b-tab>
                 </b-tabs>

@@ -1,5 +1,5 @@
 <template>
-    <div class="card border-0 my-4 p-1" @click="toPage('DetailAssignmentDashboard')">
+    <div class="card border-0 my-4 p-1" @click="toPage('DetailAssignmentAdmin')">
         <div class="card-body p-0">
             <div class="d-flex justify-content-around list-card">
                 <div>
