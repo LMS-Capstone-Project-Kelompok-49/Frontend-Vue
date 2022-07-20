@@ -4,7 +4,7 @@ import router from '../router/index'
 const state = () => ({
   loginMessage: '',
   isLogin: true,
-  role: 'Admin',
+  role: 'User',
   token: '',
   transactions: [
     { name: 'ada' }
@@ -21,6 +21,9 @@ const mutations = {
   },
   setToken (state, param) {
     state.token = param
+  },
+  setUser (state, payload) {
+    state.user = payload
   }
 }
 
@@ -78,7 +81,25 @@ const actions = {
       router.push({ name: 'LoginPage' })
     }
   },
-
+  async checkUserdata (store) {
+    try {
+        const link = 'https://3.95.181.246/api/course/';
+        await axios.get(link)
+                .then(Response => {
+                    console.log(Response.status)
+                    if(Response.status === 200){
+                        store.commit('setUser', Response.data.users)
+                    }
+                })
+                .catch((error) => {
+                    console.log("error Axios");
+                    console.log(error);
+                })
+    } catch (error) {
+        console.log(error)
+        throw error
+    }
+  }
 }
 
 export default {
