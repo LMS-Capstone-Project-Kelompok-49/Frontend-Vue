@@ -76,6 +76,7 @@ export default {
 }
 .course-title-desc .title{
     font-size: .7em;
+    line-height: .9em;
 }
 .course-title-desc .sub{
     font-size: .5em;
