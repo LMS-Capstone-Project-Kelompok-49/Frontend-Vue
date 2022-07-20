@@ -33,7 +33,7 @@ const mutations = {
 const actions = {
     async getAllCourses (store) {
         try {
-            const link = 'http://3.95.181.246/api/course/all'
+            const link = 'https://3.95.181.246/api/course/all'
             await axios.get(link)
                 .then(Response => {
                     console.log(Response.status)
@@ -52,7 +52,7 @@ const actions = {
     },
     async getAllTypeCourses (store) {
         try {
-            const link = 'http://3.95.181.246/api/type_course'
+            const link = 'https://3.95.181.246/api/type_course'
             await axios.get(link)
                 .then(Response => {
                     console.log(Response.status)
@@ -80,7 +80,7 @@ const actions = {
     async GetCourseById (store, param) {
         store.commit('setDetailId', param)
         try {
-            const link = 'http://3.95.181.246/api/course/'
+            const link = 'https://3.95.181.246/api/course/'
             await axios.get(link+param)
                 .then(Response => {
                     console.log(Response.status)

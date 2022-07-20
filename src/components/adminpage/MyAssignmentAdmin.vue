@@ -13,11 +13,10 @@
                 <label class="text-muted">Laravel</label>
             </div>
             <div class="assignment-text">
-                <label>23:59 PM</label><br>
-                <label class="text-muted">Due April 21, 2022</label>
+                <label>Ridho Alkahfi Bagas</label>
             </div>
             <div class="assignment-dot">
-                <button type="button" class="btn btn-info rounded-pill" @click="toPage('DetailAssignmentAdmin')">Add Task</button>
+                <button type="button" class="btn btn-info rounded-pill" @click="toPage('DetailAssignmentAdmin')">Review</button>
             </div>
         </div>
     </div>

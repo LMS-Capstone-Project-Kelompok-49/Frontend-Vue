@@ -8,10 +8,6 @@
                 <div class="col-8">
                     <div class="course-title-desc mt-2">
                         <label class="title">Pemrograman Web</label><br>
-                        <label class="sub text-muted">
-                            <i class="fas fa-user mr-2"></i>
-                            Fuad Mumtas, S.pd
-                        </label>
                     </div>
                 </div>
             </div>
@@ -28,12 +24,10 @@
                 </div>
             </div>
             <div class="course-progess my-4">
-                <div class="d-flex justify-content-between">
-                    <span>Your Progress</span>
-                    <span>40%</span>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar bg-mx-green" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                <div class="d-flex">
+                    <span class="me-2">Code Course</span>
+                    <i class="far fa-copy me-2"></i>
+                    <span>3XPYSKAI697YZA</span>
                 </div>
             </div>
         </div>

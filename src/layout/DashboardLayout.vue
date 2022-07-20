@@ -98,7 +98,13 @@ export default {
     checkIsLogin () {
       const loginLogic = this.$store.state.main.isLogin
       if(loginLogic) {
-        console.log("berhasil Masuk");
+        const role = this.$store.state.main.role
+        if(role === 'User'){
+          console.log("berhasil Masuk");
+          this.$store.state.main.checkUserdata
+        } else {
+          this.$router.push({ name: 'Home' })
+        }   
       } else {
         this.$router.push({ name: 'LoginPage' })
       }
