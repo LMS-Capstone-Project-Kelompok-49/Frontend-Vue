@@ -23,11 +23,11 @@
                             </div>
                         </div>
                         <div>
-                            <label class="title-course">Mastering React Js untuk Pemula</label>
+                            <label class="title-course">Belajar Web</label>
                             <div class="sub-title-course">
                                 <div class="">
                                     <i class="fas fa-user text-muted mr-3"></i>
-                                    <label class="text-muted">Fernando Hendrict</label>
+                                    <label class="text-muted">Amidillah Ajie, S.Si, M.T</label>
                                 </div>
                             </div>
                             <div class="d-flex sub-subtile-course">
@@ -47,7 +47,7 @@
                                     <label class="text-decoration-line-through text-muted">Rp 600.000</label>
                                 </div>
                                 <div class="price-course">
-                                    <label>Rp 600.000</label>
+                                    <label>Rp 520.000</label>
                                 </div>
                             </div>
                             <div class="btn-course-wrapper">

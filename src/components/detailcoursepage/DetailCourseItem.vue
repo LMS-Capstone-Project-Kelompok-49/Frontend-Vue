@@ -1,7 +1,7 @@
 <template>
     <div class="title">
-        <h1 class="titlecolor">Becoming Professional UI/UX Design</h1>
-        <p class="subtitle" justified>Jadilah seorang profesional UI/UX Designer dengan mengikuti kursus ini. Kamu akan diajari bagaimana cara menyelesaikan sebuah case dari user dalam pembuatan sebuah produk digital.</p>
+        <h1 class="titlecolor">Belajar Web</h1>
+        <p class="subtitle" justified>Jadilah seorang profesional Web Developer dengan mengikuti kursus ini. Kamu akan diajari bagaimana cara menyelesaikan sebuah case dari user dalam pembuatan sebuah produk digital.</p>
         <div class="d-flex pb-2">
             <div class="d-flex me-auto">
                 <img :src="require('@/assets/images/detailcourse_design_logo.png')" class="" width="100%" />
