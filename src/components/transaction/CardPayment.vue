@@ -22,7 +22,7 @@
           </div>
           <div class="mt-4">
             <div class="text-muted">Total Payment</div>
-            <div>Rp. 1.100.000</div>
+            <div>Rp. 520.000</div>
           </div>
         </div>
         <div class="mt-5">

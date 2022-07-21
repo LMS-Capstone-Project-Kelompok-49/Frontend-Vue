@@ -11,8 +11,8 @@
                                 </div>
                             </a>
                             <div>
-                                <h6 class="label-mentor">Fernando Ferix</h6>
-                                <label class="label-mentor-detail">UI/UX Specialist</label>
+                                <h6 class="label-mentor">Amidillah Ajie</h6>
+                                <label class="label-mentor-detail">Web Specialist</label>
                             </div>
                         </div>
                     <p class="detail-mentor pt-3" justified>“Kelas yang sangat di rekomendasikan untuk pemula. Disini mentor sangat bersahabat sekali. kerennn abissss” </p>

@@ -48,11 +48,11 @@
                             </div>
                         </a>
                         <div>
-                            <h6 class="label-mentor">Fernando Ferix</h6>
-                            <label class="label-mentor-detail">UI/UX Specialist</label>
+                            <h6 class="label-mentor">Amidillah Ajie, S.Si, M.T</h6>
+                            <label class="label-mentor-detail">Web Specialist</label>
                         </div>
                     </div>
-                    <p class="detail-mentor pt-3" justified>Hi, perkenalkan saya adalah fernando. Saya telah menjadi spesialis UI UX selama 2 tahun dan memiliki kemampuan di bidang Design UI UX. </p>
+                    <p class="detail-mentor pt-3" justified>Hi, perkenalkan saya adalah Amidillah Ajie. Saya telah menjadi spesialis Web selama 2 tahun dan memiliki kemampuan di bidang Web Developer. </p>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     <div class="d-flex pt-2 ms-3">
                         <div class="me-auto">
                             <i class="far fa-play-circle mr-2 icon"></i>
-                            <label class="text-muted">Introduction of UI/UX</label>
+                            <label class="text-muted">Introduction of Web Developer</label>
                         </div>
                         <div>
                             <label class="text-muted me-3">15.00</label>
@@ -76,7 +76,7 @@
                     <div class="d-flex pt-2 ms-3">
                         <div class="me-auto">
                             <i class="fas fa-book-bookmark mr-2 icon"></i>
-                            <label class="text-muted">Introduction of UI/UX</label>
+                            <label class="text-muted">Introduction of Web Developer</label>
                         </div>
                         <div>
                             <label class="text-muted me-3"></label>
@@ -89,7 +89,7 @@
                     <div class="d-flex pt-2 ms-3">
                         <div class="me-auto">
                             <i class="far fa-play-circle mr-2 icon"></i>
-                            <label class="text-muted">Introduction of UI/UX</label>
+                            <label class="text-muted">Introduction of Web Developer</label>
                         </div>
                         <div>
                             <label class="text-muted me-3">15.00</label>
@@ -102,7 +102,7 @@
                     <div class="d-flex pt-2 ms-3">
                         <div class="me-auto">
                             <i class="fas fa-book-bookmark mr-2 icon"></i>
-                            <label class="text-muted">Introduction of UI/UX</label>
+                            <label class="text-muted">Introduction of Web Developer</label>
                         </div>
                         <div>
                             <label class="text-muted me-3"></label>
@@ -115,7 +115,7 @@
                     <div class="d-flex pt-2 ms-3">
                         <div class="me-auto">
                             <i class="far fa-play-circle mr-2 icon"></i>
-                            <label class="text-muted">Introduction of UI/UX</label>
+                            <label class="text-muted">Introduction of Web Developer</label>
                         </div>
                         <div>
                             <label class="text-muted me-3">15.00</label>
@@ -128,7 +128,7 @@
                     <div class="d-flex pt-2 ms-3">
                         <div class="me-auto">
                             <i class="fas fa-book-bookmark mr-2 icon"></i>
-                            <label class="text-muted">Introduction of UI/UX</label>
+                            <label class="text-muted">Introduction of Web Developer</label>
                         </div>
                         <div>
                             <label class="text-muted me-3"></label>

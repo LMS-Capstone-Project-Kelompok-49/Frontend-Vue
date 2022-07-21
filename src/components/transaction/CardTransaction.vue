@@ -26,7 +26,7 @@
                     Total Payment
                 </div>
                 <div>
-                    Rp. 1.100.000
+                    Rp. 520.000
                 </div>
             </div>
             <div class="my-auto">

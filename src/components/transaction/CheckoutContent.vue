@@ -124,10 +124,10 @@
                             </div>
                             <div class="col-8">
                                 <div class="course-title">
-                                    Mastering React Js untuk Pemula
+                                    Belajar Web
                                 </div>
                                 <div class="course-price">
-                                    Rp 550.000
+                                    Rp 520.000
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                                 Subtotal Product
                             </div>
                             <div class="text-right">
-                                Rp 1.100.000
+                                Rp 520.000
                             </div>
                         </div>
                         <div class="d-flex justify-content-between mt-2">
@@ -157,7 +157,7 @@
                                 Order Total
                             </div>
                             <div class="text-right text-mx-blue-green">
-                                <b>Rp 1.1900.000</b>
+                                <b>Rp 520.000</b>
                             </div>
                         </div>
                     </div>
