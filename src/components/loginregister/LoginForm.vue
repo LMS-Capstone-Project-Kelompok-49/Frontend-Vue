@@ -84,7 +84,8 @@ export default {
           this.message = 'Email must be valid email'
         } else {
           if(this.form.password !== '') {
-            this.$store.dispatch('main/loginCheck', this.form)
+            // this.$store.dispatch('main/loginCheck', this.form)
+            this.$store.dispatch('main/checkDummyLogin', this.form)
           } else {
             this.message = 'Password must be filled'
           }

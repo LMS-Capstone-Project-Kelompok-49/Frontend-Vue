@@ -49,7 +49,7 @@
                                 </button>
                             </div>
                         </div>
-                        <TabsMaterial v-for="(value, index) in course.materials" :key="index" :material="value" :mentor="course.mentor.name" />
+                        <TabsMaterial v-for="(value, index) in course.materials" :key="index" :material="value" :mentor="course.mentor.name" :courseid="course.id" />
                     </b-tab>
                     <b-tab title="Assignments">
                         <div class="d-flex justify-content-between">
@@ -67,7 +67,7 @@
                                 </button>
                             </div>
                         </div>
-                        <TabsAssignment v-for="(value, index) in course.assignments" :key="index" :type="value.type" :assignment="value" />
+                        <TabsAssignment v-for="(value, index) in course.assignments" :key="index" :type="value.type" :assignment="value" :courseid="course.id" />
                     </b-tab>
                 </b-tabs>
             </div>

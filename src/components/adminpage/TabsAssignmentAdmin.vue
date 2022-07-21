@@ -1,6 +1,6 @@
 <template>
     <div class="container my-4">
-        <div class="card" v-if="type === 1" @click="toPage('DetailAssignmentAdmin', 1)">
+        <div class="card" v-if="type === 1" @click="toPage('DetailAssignmentAdmin', courseid, assignment.id)">
             <div class="card-body">
                 <div class="d-flex justify-content-between list-card">
                     <div>
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="card" v-if="type === 2" @click="toPage('DetailAssignmentAdmin', 2)">
+        <div class="card" v-if="type === 2" @click="toPage('DetailAssignmentAdmin', courseid, assignment.id)">
             <div class="card-body">
                 <div class="d-flex justify-content-between list-card">
                     <div>
@@ -43,11 +43,14 @@ export default {
         type: {
             default: 1,
             type: Number
+        },
+        courseid: {
+            type: Number
         }
     },
     methods: {
-        toPage (routeName, typeAss) {
-            this.$router.push({ name: routeName, params: { id: 1, code: typeAss } })
+        toPage (routeName, idCourse ,typeAss) {
+            this.$router.push({ name: routeName, params: { id: idCourse, code: typeAss } })
         }
     },
 }

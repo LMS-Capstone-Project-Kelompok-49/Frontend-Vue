@@ -111,7 +111,7 @@ const routes = [
           {
             path: 'certificate',
             name: 'CertificateAdmin',
-            component: () => import('../views/dashboard/CertificateView.vue')
+            component: () => import('../views/admin/CertificateViewAdmin.vue')
           },
           {
             path: 'notification',

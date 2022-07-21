@@ -1,5 +1,5 @@
 <template>
-    <div class="container my-4" @click="toPage('DetailMaterialsDashboard', material.id)">
+    <div class="container my-4" @click="toPage('DetailMaterialsDashboard', courseid ,material.id)">
         <div class="d-flex">
             <div>
                 <b-avatar class="bg-mx-blue-green" size="3em">
@@ -39,11 +39,14 @@ export default {
         },
         mentor: {
             type: String
+        },
+        courseid: {
+            type: Number
         }
     },
     methods: {
-        toPage (routeName, CourseID) {
-            this.$router.push({ name: routeName, params: { id: 1, materialId: CourseID } })
+        toPage (routeName, idCourse ,CourseID) {
+            this.$router.push({ name: routeName, params: { id: idCourse, materialId: CourseID } })
         }
     },
 }

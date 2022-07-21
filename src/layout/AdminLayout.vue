@@ -28,7 +28,7 @@
             </li>
 
             <li class="nav-link">
-                <a @click="toPage('CertificateDashboard')">
+                <a @click="toPage('CertificateAdmin')">
                     <i class='bx bx-certification icon'></i>
                     <span class="text nav-text">Certificate</span>
                 </a>

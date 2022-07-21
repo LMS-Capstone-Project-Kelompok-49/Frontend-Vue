@@ -3,8 +3,8 @@ import router from '../router/index'
 
 const state = () => ({
   loginMessage: '',
-  isLogin: true,
-  role: 'Admin',
+  isLogin: false,
+  role: '',
   token: '',
   transactions: [
     { name: 'ada' }
@@ -90,7 +90,84 @@ const state = () => ({
           },
         ],
         progess: '10%'
-      }
+      },
+      {
+        id: 69,
+        title: 'Belajar UI UX',
+        mentor: {
+          image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+          name: 'Abdul Aziz, S.Si, M.T',
+          email: 'abdaziz@gmail.com'
+        },
+        members: [
+          {
+            image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
+            name: 'Sharon Almambera',
+            email: 'sharon@gmail.com'
+          },
+          {
+            image: 'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+            name: 'Mark stomper',
+            email: 'mark@gmail.com'
+          },
+          {
+            image: 'https://images.unsplash.com/photo-1623582854588-d60de57fa33f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+            name: 'Daniel khliev',
+            email: 'daniel@gmail.com'
+          },
+        ],
+        materials: [
+          {
+            id: 24,
+            title: 'Fundamental UI UX',
+            date: '29 April 2022, 08:57 AM',
+            desc: "UX (User Experience) adalah proses mendesain untuk mengembangkan kualitas produk berdasarkan human-first approach.Yang perlu diingat adalah, UX bukan tentang desain visual; namun terkait kemudahan, relevansi, dan efisiensi pemakaian suatu produk oleh user (pengguna produk). Desainer akan memikirkan keinginan dan kebutuhan user saat menggunakan produk yang diciptakan. Oh iya, penilaian pengalaman user mencakup seluruh aspek interaksi. Mulai dari aspek interaksi dengan perusahaan, layanan, struktur desain, hingga navigasi penggunaan produk. Jadi, UX bukan sekedar berpatokan pada ulasan dan penilaian dari user.",
+            type: 1,
+            link: 'https://www.youtube.com/embed/NbcrLW1BsAA',
+            message: "Selamat pagi semuanya, untuk hari ini kita melakukan perkuliahan secara Asynchronous ya. Jngan Lupa selalu di ulang."
+          },
+          {
+            id: 42,
+            title: 'Fundamental Figma',
+            date: '29 April 2022, 08:57 AM',
+            desc: "lorem",
+            type: 2,
+            link: 'https://docs.google.com/presentation/d/e/2PACX-1vRGGAeTiHu3jSXkHhntc6nhc2TIKyxw8fKE4SivXHGwZBwHwNRqirGJ5zY6IatvBOCCInK0BIGbtK9b/embed?start=false&loop=false&delayms=3000',
+            message: "Selamat pagi semuanya, untuk hari ini kita melakukan perkuliahan secara Asynchronous ya."
+          },
+        ],
+        assignments: [
+          {
+            id: 78,
+            title: 'Figma Supafast program',
+            type: 1,
+            due: 'April 30, 2022 11:59 PM',
+            instruction :'Tugas task 1 materi mobile app, tugas mahasiswa sekalian adalah cari satu buah permasalahan pada mobile app dan analisasa apa permsalahannya. Setelah itu coba lakukan redesign dari mobile app tersebut. Format Pengumpulan terlampir di bawah ini',
+            references: [
+              {
+                title: 'UIUX.DW.116.docx'
+              },
+              {
+                title: 'UIUX.DW.117.docx'
+              },
+              {
+                title: 'UIUX.DW.118.docx'
+              }
+            ],
+            link: ''
+          },
+          {
+            id: 99,
+            title: 'Quiz Figma realy supafast',
+            type: 2,
+            due: 'April 30, 2022 11:59 PM',
+            instruction :'Quiz weekly task tentang materi fundamental ui ux',
+            references: [],
+            link: 'https://docs.google.com/forms/d/e/1FAIpQLSeJqFbHp7CPM4pUY1oDlnyBr0xBzCH_CgSFg2FgtVafvwxwwg/viewform?usp=sf_link'
+          },
+        ],
+        progess: '10%'
+      },
     ],
     certificates: [
       { src: 'https://images.unsplash.com/photo-1587483169554-f9bdd1dc9fe5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80' },
@@ -115,6 +192,9 @@ const mutations = {
   },
   setUser (state, payload) {
     state.user = payload
+  },
+  setRole (state, params) {
+    state.role = params
   }
 }
 
@@ -189,6 +269,21 @@ const actions = {
     } catch (error) {
         console.log(error)
         throw error
+    }
+  },
+  checkDummyLogin (store, payload) {
+    if (payload.email === 'user@gmail.com' && payload.password === '12345678'){
+      alert('Login Berhasil')
+      store.commit('setIsLogin', true)
+      store.commit('setRole', 'User')
+      router.push({ name: 'Home' })
+    } else if (payload.email === 'admin@gmail.com' && payload.password == '12345678') {
+      alert('Login Berhasil')
+      store.commit('setIsLogin', true)
+      store.commit('setRole', 'Admin')
+      router.push({ name: 'Home' })
+    } else {
+      store.commit('setLoginMessage', 'Login Failed, User and password are wrong!!')
     }
   }
 }
