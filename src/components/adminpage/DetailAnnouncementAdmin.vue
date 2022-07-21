@@ -11,16 +11,21 @@
                 </div>
             </div>
             <div>
-                <CardAnnouncementAdmin v-for="n in 3" :key="n" />
+                <CardAnnouncementAdmin v-for="(value, index) in courseAss.assignments" :key="index" :assignment="value" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import CardAnnouncementAdmin from '@/components/adminpage/CardAnnouncementAdmin'
+import CardAnnouncementAdmin from '@/components/adminpage/CardAnnouncementAdmin.vue'
 export default {
     name: 'DetailAnnouncementAdmin',
+    props: {
+        courseAss: {
+            type: Object
+        }
+    },
     components: {
         CardAnnouncementAdmin,
     },

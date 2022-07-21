@@ -9,10 +9,10 @@
                             </b-avatar>
                         </div>
                         <label class="card-title">
-                            Materi Pertemuan 12
+                            {{ material.title }}
                         </label><br>
                         <label class="card-subtitle">
-                            Last Update April 21, 2022 at 11:59 PM
+                            {{ material.date }}
                         </label>
                         <i class="far fa-edit"></i>
                     </div>
@@ -24,6 +24,11 @@
 <script>
 export default {
     name: 'TabsMaterialAdmin',
+    props: {
+        material: {
+            type: Object
+        },
+    },
     methods: {
         toPage (routeName) {
             this.$router.push({ name: routeName, params: { id: 1, materialId: 4212 } })

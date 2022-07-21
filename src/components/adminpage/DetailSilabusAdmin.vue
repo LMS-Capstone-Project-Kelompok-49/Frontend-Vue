@@ -12,11 +12,11 @@
                     </div>
                     <div class="ml-3 silabus-head">
                         <div class="silabus-title">
-                            <b>Design Web</b>
+                            <b>{{ course.title }}</b>
                         </div>
                         <div class="silabus-mentor">
                             <i class="far fa-user"></i>
-                            Hamidillah Ajie, S.Si, M.T
+                            {{ course.mentor.name }}
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                                 </button>
                             </div>
                         </div>
-                        <TabsMaterial v-for="n in 2" :key="n"/>
+                        <TabsMaterial v-for="(value, index) in course.materials" :key="index" :material="value" :mentor="course.mentor.name" />
                     </b-tab>
                     <b-tab title="Assignments">
                         <div class="d-flex justify-content-between">
@@ -67,7 +67,7 @@
                                 </button>
                             </div>
                         </div>
-                        <TabsAssignment v-for="n in 2" :key="n" :type="n" />
+                        <TabsAssignment v-for="(value, index) in course.assignments" :key="index" :type="value.type" :assignment="value" />
                     </b-tab>
                 </b-tabs>
             </div>
@@ -84,7 +84,12 @@ export default {
     components: {
         TabsMaterial,
         TabsAssignment,
-    }
+    },
+    props: {
+        course: {
+            type: Object
+        }
+    },
 }
 </script>
 

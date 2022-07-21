@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-8">
                     <div class="course-title-desc mt-2">
-                        <label class="title">Pemrograman Web</label><br>
+                        <label class="title">{{ course.title }}</label><br>
                     </div>
                 </div>
             </div>
@@ -40,6 +40,11 @@
 <script>
 export default {
     name: 'MyCourseAdmin',
+    props: {
+        course: {
+            type: Object
+        }
+    },
     methods: {
         toDetail (idCourse) {
             this.$router.push({ name: 'DetailCourseAdmin', params: {id:idCourse } })
