@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div>
-                <CardAnnounment v-for="(value, index) in courseAss.assignments" :key="index" :assignment="value" />
+                <CardAnnounment v-for="(value, index) in courseAss.assignments" :key="index" :assignment="value" :courseid="courseAss.id" />
             </div>
         </div>
     </div>

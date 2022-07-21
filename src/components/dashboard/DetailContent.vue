@@ -21,8 +21,7 @@ export default {
   computed: {
     getCourses () {
         const id  = this.$route.params.id
-        const courses = this.$store.state.main.user.courses
-        return courses.filter(function(value){
+        return this.$store.state.main.user.courses.filter(function(value){
             return value.id === id
         })
     }

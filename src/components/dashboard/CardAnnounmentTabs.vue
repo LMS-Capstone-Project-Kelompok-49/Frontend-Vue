@@ -1,5 +1,5 @@
 <template>
-    <div class="card border-0 my-4 p-1" @click="toPage('DetailAssignmentDashboard', assignment.id)">
+    <div class="card border-0 my-4 p-1" @click="toPage('DetailAssignmentDashboard', courseid ,assignment.id)">
         <div class="card-body p-0">
             <div class="d-flex justify-content-around list-card">
                 <div>
@@ -28,11 +28,14 @@ export default {
     props: {
         assignment: {
             type: Object
+        },
+        courseid: {
+            type: Number
         }
     },
     methods: {
-        toPage (routeName, assignmentId) {
-            this.$router.push({ name: routeName, params: { id: 1, code: assignmentId } })
+        toPage (routeName, idCourse ,assignmentId) {
+            this.$router.push({ name: routeName, params: { id: idCourse, code: assignmentId } })
         }
     },
 }

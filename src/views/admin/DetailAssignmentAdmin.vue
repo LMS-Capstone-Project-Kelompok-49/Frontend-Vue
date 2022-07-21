@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <AssignmentContent :type="thisType" />
+        <AssignmentContent :assignment="detailCourses" />
     </div>
 </template>
 
@@ -14,6 +14,17 @@ export default {
   computed: {
     thisType () {
       return this.$route.params.code
+    },
+    detailCourses () {
+      const code = this.$route.params.code
+      const id  = this.$route.params.id
+      let courses = this.$store.state.main.user.courses.filter(function(value){
+          return value.id === id
+      })
+      let material = courses[0].assignments.filter(function(value){
+        return value.id === code
+      })
+      return material[0]
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="container my-4" @click="toPage('DetailMaterialsAdmin')">
+    <div class="container my-4" @click="toPage('DetailMaterialsAdmin', courseid, material.id )">
             <div>
                 <div class="card card-material">
                     <div class="card-body d-flex justify-content-between">
@@ -28,10 +28,13 @@ export default {
         material: {
             type: Object
         },
+        courseid: {
+            type: Number
+        }
     },
     methods: {
-        toPage (routeName) {
-            this.$router.push({ name: routeName, params: { id: 1, materialId: 4212 } })
+        toPage (routeName, idCourse, idMaterial) {
+            this.$router.push({ name: routeName, params: { id: idCourse, materialId: idMaterial } })
         }
     },
 }

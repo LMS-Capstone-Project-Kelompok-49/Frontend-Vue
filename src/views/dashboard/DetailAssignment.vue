@@ -18,8 +18,7 @@ export default {
     detailCourses () {
       const code = this.$route.params.code
       const id  = this.$route.params.id
-      let courses = this.$store.state.main.user.courses
-      courses = courses.filter(function(value){
+      let courses = this.$store.state.main.user.courses.filter(function(value){
           return value.id === id
       })
       let material = courses[0].assignments.filter(function(value){

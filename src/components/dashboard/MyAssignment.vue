@@ -15,7 +15,7 @@
                 <label class="text-muted">Due {{ assignment.due }}</label>
             </div>
             <div class="assignment-dot">
-                <button type="button" class="btn btn-info rounded-pill" @click="toPage('DetailAssignmentDashboard', assignment.id)">Add Task</button>
+                <button type="button" class="btn btn-info rounded-pill" @click="toPage('DetailAssignmentDashboard', course.id , assignment.id)">Add Task</button>
             </div>
         </div>
     </div>
@@ -33,8 +33,8 @@ export default {
         },
     },
     methods: {
-        toPage (routeName, assignmentId) {
-            this.$router.push({ name: routeName, params: { id: 1, code: assignmentId } })
+        toPage (routeName, idCourse ,assignmentId) {
+            this.$router.push({ name: routeName, params: { id: idCourse, code: assignmentId } })
         }
     },
 }

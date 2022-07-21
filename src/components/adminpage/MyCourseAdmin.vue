@@ -7,20 +7,20 @@
                 </div>
                 <div class="col-8">
                     <div class="course-title-desc mt-2">
-                        <label class="title">{{ course.title }}</label><br>
+                        <label class="title">{{ course.title }}</label>
                     </div>
                 </div>
             </div>
             <div class="d-flex justify-content-around text-center course-desc text-muted my-3">
                 <div>
                     <label>
-                        <i class="fas fa-users mr-2"></i>
-                        30 Members
+                        <i class="fas fa-users mr-2 my-auto"></i>
+                        {{ course.members.length }} Members
                     </label>
                 </div>
                 <div>
                     <i class="fas fa-list mr-2"></i>
-                    <label>3 Material</label>
+                    <label>{{ course.materials.length }} Material</label>
                 </div>
             </div>
             <div class="course-progess my-4">
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-info btn-block m-0 btn-courses bg-mx-green border-mx-green" @click="toDetail(1)">
+        <button class="btn btn-info btn-block m-0 btn-courses bg-mx-green border-mx-green" @click="toDetail(course.id)">
             View Class
         </button>
     </div>

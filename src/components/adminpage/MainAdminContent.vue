@@ -1,34 +1,34 @@
 <template>
     <div class="main-content">
-            <div class="d-flex justify-content-between">
-                <h3 class="sub-title">My Course</h3>
-                <div class="d-flex">
-                    <b-form-select v-model="optionsSelected" :options="options"></b-form-select>
-                    <div class="button-head ms-2">
-                        <b-button class="btn btn-info bg-mx-blue-green border-mx-green" v-b-modal.modal-lg>
-                            Create Team
-                        </b-button>
+         <div class="d-flex justify-content-between">
+            <h3 class="sub-title">My Course</h3>
+            <div class="d-flex">
+                <b-form-select v-model="optionsSelected" :options="options"></b-form-select>
+                <div class="button-head ms-2">
+                    <b-button class="btn btn-info bg-mx-blue-green border-mx-green" v-b-modal.modal-lg>
+                        Create Team
+                    </b-button>
 
-                        <b-modal id="modal-lg" size="lg">
-                            <p class="fs-3 fw-bold">Create Your Team</p>
-                            <p class="my-4">Organisasikan Course yang akan kamu dirikan agar orang lain dapat belajar dengan nyaman di kelas mu</p>
-                            
-                        </b-modal>
-                    </div>
+                    <b-modal id="modal-lg" size="lg">
+                        <p class="fs-3 fw-bold">Create Your Team</p>
+                        <p class="my-4">Organisasikan Course yang akan kamu dirikan agar orang lain dapat belajar dengan nyaman di kelas mu</p>
+                    </b-modal>
                 </div>
             </div>
-            <div class="d-flex">
-                <MyCourseAdmin v-for="(value, index) in getCourse" :key="index" :course="value" />
-            </div>
+        </div>
             
-            <div class="row mt-4">
-            <div class="mt-2 col-sm-12 col-md-12 col-lg-8 d-flex-column">
+        <div class="d-flex">
+            <MyCourseAdmin class="m-2" v-for="(value, index) in getCourse" :key="index" :course="value" />
+        </div>
+            
+        <div class="row mt-4">
+            <div class="mt-2 col-sm-12 col-md-12 col-lg-12 d-flex-column">
                 <h3 class="sub-title">Assignment</h3>
                 <div v-for="(value, index) in getCourse" :key="index">
-                        <div v-if="value.assignments">
-                            <MyAssignmentAdmin v-for="(valueAsg, indexAsg) in value.assignments" :key="indexAsg" :assignment="valueAsg" :course="value" />
-                        </div>
+                    <div v-if="value.assignments">
+                        <MyAssignmentAdmin v-for="(valueAsg, indexAsg) in value.assignments" :key="indexAsg" :assignment="valueAsg" :course="value" />
                     </div>
+                </div>
             </div>
 
             <div class="mt-4 col-sm-12 col-md-12 col-lg-4 d-flex-column">
