@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-body">
-            <button class="btn btn-outline-success border-0 text-mx-blue-green hover-mx-green" type="button" @click="$router.go(-1)">
+            <button class="btn btn-outline-success border-0 text-mx-blue-green hover-mx-green" type="button" @click="toPage">
                 <i class="fas fa-angle-left mr-2"></i>
                 Back
             </button>
@@ -10,8 +10,8 @@
                     <i class="fas fa-book icon-material icon"></i>
                 </div>
                 <div class="ml-4 w-100">
-                    <label class="d-block title text-mx-green">UI & UX Design Mobile App</label>
-                    <label class="d-block sub">Due April 30, 2022 11:59 PM</label>
+                    <label class="d-block title text-mx-green">{{ dataAssignment.title }}</label>
+                    <label class="d-block sub">Due {{ dataAssignment.due }}</label>
                     <label class="d-block point">No Points</label>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     Instructions
                 </div>
                 <div class="info-sub">
-                    Tugas task 1 materi mobile app, tugas mahasiswa sekalian adalah cari satu buah permasalahan pada mobile app dan analisasa apa permsalahannya. Setelah itu coba lakukan redesign dari mobile app tersebut. Format Pengumpulan terlampir di bawah ini
+                    {{ dataAssignment.instruction }}
                 </div>
             </div>
             <div>
@@ -29,7 +29,7 @@
                     Reference Materials
                 </div>
                 <div>
-                    <AssignmentMaterial />
+                    <AssignmentMaterial v-for="(value, index) in dataAssignment.references" :key="index" :material="value" />
                 </div>
             </div>
         </div>
@@ -42,6 +42,17 @@ export default {
     name: 'AssignmentInfo',
     components: {
         AssignmentMaterial
+    },
+    props: {
+        dataAssignment: {
+            type: Object
+        }
+    },
+    methods: {
+        toPage() {
+            const id  = this.$route.params.id
+            this.$router.push({ name: 'DetailCourseDashboard', params: { id: id } })
+        }
     }
 }
 </script>

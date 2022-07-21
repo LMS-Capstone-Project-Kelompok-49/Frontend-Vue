@@ -2,11 +2,11 @@
     <div class="card-wrapper my-4">
         <div class="d-flex justify-content-around list-card">
             <div>
-                <b-avatar src="https://placekitten.com/300/300"></b-avatar>
-                Hamidillah Ajie, S...
+                <b-avatar :src="member.image"></b-avatar>
+                {{ member.name }}
             </div>
             <div>
-                Hamidillah Ajie@gmail.co.id
+                {{ member.email }}
             </div>
             <div>
                 {{ role }}
@@ -19,7 +19,12 @@
 export default {
     name: 'CardMember',
     props: {
-        role: String
+        member: {
+            type: Object
+        },
+        role: {
+            type: String
+        }
     }
 }
 </script>

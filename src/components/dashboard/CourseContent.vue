@@ -16,8 +16,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4"  v-for="n in 6" :key="n">
-                <MyCourseDashboard />
+            <div class="col-sm-12 col-md-6 col-lg-4"  v-for="(value, index) in getCourse" :key="index">
+                <MyCourseDashboard :course="value" />
             </div>
         </div>
     </div>
@@ -29,6 +29,11 @@ export default {
   name: 'CourseContent',
   components: {
       MyCourseDashboard,
+  },
+  computed: {
+    getCourse () {
+        return this.$store.state.main.user.courses
+    }
   },
   data() {
       return {

@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-body">
-            <button class="btn btn-outline-success border-0 text-mx-blue-green hover-mx-green" type="button" @click="$router.go(-1)">
+            <button class="btn btn-outline-success border-0 text-mx-blue-green hover-mx-green" type="button" @click="toPage">
                 <i class="fas fa-angle-left mr-2"></i>
                 Back
             </button>
@@ -11,10 +11,10 @@
                         <i class="fas fa-book icon-material icon"></i>
                     </div>
                     <div class="ml-4 w-100">
-                        <label class="d-block title text-mx-green">UI & UX Design Mobile App</label>
+                        <label class="d-block title text-mx-green">{{ material.title }}</label>
                         <label class="d-block sub">
                             <i class="far fa-user mr-2"></i>
-                            Hamidillah Ajie, S.Si, M.T
+                            {{ mentor }}
                         </label>
                     </div>
                 </div>
@@ -27,24 +27,24 @@
             <hr>
             <div class="my-4">
                 <div class="embed-wrapper">
-                    <b-embed
-                        type="iframe"
-                        aspect="16by9"
-                        src="https://www.youtube.com/embed/NbcrLW1BsAA"
-                        allowfullscreen
-                        class="embed-item"
-                    ></b-embed>
+                    <div v-if="material.type === 1">
+                        <b-embed
+                            type="iframe"
+                            aspect="16by9"
+                            :src="material.link"
+                            allowfullscreen
+                            class="embed-item"
+                        ></b-embed>
+                    </div>
+                    <div v-if="material.type === 2">
+                        <iframe :src="material.link" frameborder="0" width="100%" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
                 </div>
                 <div class="info-title">
                     Descriptions
                 </div>
                 <div class="info-sub">
-                    UX (User Experience) adalah proses mendesain untuk mengembangkan kualitas produk berdasarkan human-first approach. 
-                    Yang perlu diingat adalah, UX bukan tentang desain visual; namun terkait kemudahan, relevansi, dan efisiensi pemakaian suatu produk oleh user (pengguna produk).
-                    Desainer akan memikirkan keinginan dan kebutuhan user saat menggunakan produk yang diciptakan.
-                    Oh iya, penilaian pengalaman user mencakup seluruh aspek interaksi.
-                    Mulai dari aspek interaksi dengan perusahaan, layanan, struktur desain, hingga navigasi penggunaan produk.
-                    Jadi, UX bukan sekedar berpatokan pada ulasan dan penilaian dari user.
+                    {{ material.desc }}
                 </div>
             </div>
             <div class="my-4">
@@ -52,7 +52,7 @@
                     Other’s Materials
                 </div>
                 <div>
-                    <OtherMaterial v-for="n in  6" :key="n" />
+                    <OtherMaterial v-for="(value, index) in  otherMaterials" :key="index" :material="value" />
                 </div>
             </div>
         </div>
@@ -65,6 +65,23 @@ export default {
     name: 'DetailMaterial',
     components: {
         OtherMaterial
+    },
+    props: {
+        material: {
+            type: Object
+        },
+        mentor: {
+            type: String
+        },
+        otherMaterials: {
+            type: Array
+        }
+    },
+    methods: {
+        toPage() {
+            const id  = this.$route.params.id
+            this.$router.push({ name: 'DetailCourseDashboard', params: { id: id } })
+        }
     }
 }
 </script>

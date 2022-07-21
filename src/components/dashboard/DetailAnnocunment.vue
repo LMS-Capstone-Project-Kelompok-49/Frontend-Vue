@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div>
-                <CardAnnounment v-for="n in 3" :key="n" />
+                <CardAnnounment v-for="(value, index) in courseAss.assignments" :key="index" :assignment="value" />
             </div>
         </div>
     </div>
@@ -23,6 +23,11 @@ export default {
     name: 'DetailAnnounment',
     components: {
         CardAnnounment
+    },
+    props: {
+        courseAss: {
+            type: Object
+        }
     },
     data() {
         return {

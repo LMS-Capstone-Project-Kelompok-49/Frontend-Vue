@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <DetailMaterial />
+    <DetailMaterial :mentor="detailCourses.mentor" :material="detailCourses.material" :otherMaterials="detailCourses.anotherMaterials" />
   </div>
 </template>
 
@@ -10,6 +10,24 @@ export default {
   name: 'DetailMaterialsDashboard',
   components: {
     DetailMaterial
+  },
+  computed: {
+    detailCourses () {
+      const materialId = this.$route.params.materialId
+      console.log(materialId);
+      const id  = this.$route.params.id
+      let courses = this.$store.state.main.user.courses
+      courses = courses.filter(function(value){
+          return value.id === id
+      })
+      let material = courses[0].materials.filter(function(value){
+        return value.id === materialId
+      })
+      const otherMaterial = courses[0].materials.filter(function(value){
+        return value.id !== materialId
+      })
+      return { material: material[0], mentor: courses[0].mentor.name, anotherMaterials: otherMaterial }
+    }
   }
 }
 </script>
