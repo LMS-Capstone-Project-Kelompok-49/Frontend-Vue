@@ -18,7 +18,7 @@
                                 Role
                             </div>
                         </div>
-                        <CardMember :role="'Mentor'" />
+                        <CardMember :member="mentor" :role="'Mentor'" />
                     </b-collapse>
                 </div>
                 
@@ -26,7 +26,7 @@
                     <b-button v-b-toggle.collapse-2 class="btn btn-outline-info border-0 text-black bg-white d-block mt-4">
                         <i class="fas fa-chevron-down"></i>
                         Members
-                        <b-badge pill variant="secondary">20</b-badge>
+                        <b-badge pill variant="secondary">{{ members.length }}</b-badge>
                     </b-button>
                     <b-collapse id="collapse-2" class="my-2">
                         <div class="d-flex justify-content-around">
@@ -38,7 +38,7 @@
                                 Role
                             </div>
                         </div>
-                        <CardMember :role="'Member'" v-for="n in 3" :key="n" />
+                        <CardMember v-for="(value, index) in members" :key="index" :member="value" :role="'Member'" />
                     </b-collapse>
                 </div>
             </div>
@@ -52,7 +52,15 @@ export default {
     name: 'TabsMember',
     components: {
         CardMember
-    }
+    },
+    props: {
+        mentor: {
+            type: Object
+        },
+        members: {
+            type: Array
+        }
+    },
 }
 </script>
 

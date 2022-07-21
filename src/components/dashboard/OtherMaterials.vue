@@ -1,16 +1,16 @@
 <template>
     <div class="card my-4 p-1" >
-        <div class="card-body p-2">
+        <div class="card-body p-2" @click="toPage('DetailMaterialsDashboard', material.id)">
             <div class="d-flex justify-content-between list-card">
                 <div class="text-left">
                     <i class="far fa-play-circle text-mx-blue-green"></i>
-                    Fundamental of UI UX Designer
+                    {{ material.title }}
                 </div>
                 <div>
-                    Diposting 29 April 2022, 08:57 AM
+                    Diposting {{ material.date }}
                 </div>
                 <div>
-                    20 : 15 Minute
+                    <i class="far fa-arrow-alt-circle-right text-mx-blue-green"></i>
                 </div>
             </div>
         </div>
@@ -20,6 +20,16 @@
 <script>
 export default {
     name: 'OtherMaterial',
+    props: {
+        material: {
+            type: Object
+        }
+    },
+    methods: {
+        toPage (routeName, CourseID) {
+            this.$router.push({ name: routeName, params: { id: 1, materialId: CourseID } })
+        }
+    },
 }
 </script>
 

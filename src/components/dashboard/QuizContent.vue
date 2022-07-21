@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-body">
-            <button class="btn btn-outline-success border-0 text-mx-blue-green hover-mx-green" type="button" @click="$router.go(-1)">
+            <button class="btn btn-outline-success border-0 text-mx-blue-green hover-mx-green" type="button" @click="toPage">
                 <i class="fas fa-angle-left mr-2"></i>
                 Back
             </button>
@@ -10,20 +10,20 @@
                     <i class="fas fa-book icon-material icon"></i>
                 </div>
                 <div class="ml-4 w-100">
-                    <label class="d-block title text-mx-green">Quiz Practice Fundamental UI UX</label>
-                    <label class="d-block sub">Due April 30, 2022 11:59 PM</label>
+                    <label class="d-block title text-mx-green">{{ dataAssignment.title }}</label>
+                    <label class="d-block sub">Due {{ dataAssignment.due }}</label>
                     <label class="d-block point">No Points</label>
                 </div>
             </div>
             <hr>
             <div>
                 <div class="info-title">
-                    Quiz weekly task tentang materi fundamental ui ux
+                    {{ dataAssignment.desc }}
                 </div>
                 <div class="mt-3">
                     <b-embed
                         type="iframe"
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSeJqFbHp7CPM4pUY1oDlnyBr0xBzCH_CgSFg2FgtVafvwxwwg/viewform?usp=sf_link"
+                        :src="dataAssignment.link"
                     ></b-embed>
                 </div>
                 <div class="my-3 text-center">
@@ -39,6 +39,17 @@
 <script>
 export default {
     name: 'QuizContent',
+    props: {
+        dataAssignment: {
+            type: Object
+        }
+    },
+    methods: {
+        toPage() {
+            const id  = this.$route.params.id
+            this.$router.push({ name: 'DetailCourseDashboard', params: { id: id } })
+        }
+    }
 }
 </script>
 

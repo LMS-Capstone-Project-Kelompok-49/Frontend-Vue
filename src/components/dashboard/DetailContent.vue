@@ -1,10 +1,10 @@
 <template>
     <div class="row">
         <div class="col-sm-12 col-md-8 col-sm-8">
-            <DetailSilabus />
+            <DetailSilabus :course="getCourses[0]" />
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4">
-            <DetailAnnounment />
+            <DetailAnnounment :courseAss="getCourses[0]" />
         </div>
     </div>
 </template>
@@ -18,10 +18,15 @@ export default {
     DetailSilabus,
     DetailAnnounment
   },
-  data() {
-      return {
-      }
-  },
+  computed: {
+    getCourses () {
+        const id  = this.$route.params.id
+        const courses = this.$store.state.main.user.courses
+        return courses.filter(function(value){
+            return value.id === id
+        })
+    }
+  }
 }
 </script>
 

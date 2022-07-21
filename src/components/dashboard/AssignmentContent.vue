@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div class="row" v-if="type === 1">
+    <div class="row" v-if="assignment.type === 1">
         <div class="col-sm-12 col-md-8 col-lg-8">
-            <AssignmentInfo />
+            <AssignmentInfo :dataAssignment="assignment" />
         </div>  
         <div class="col-sm-12 col-md-4 col-lg-4">
             <AssignmentForm />
         </div>
     </div>
-    <div v-if="type === 2">
-        <QuizContent />
+    <div v-if="assignment.type === 2">
+        <QuizContent :dataAssignment="assignment" />
     </div>
   </div>
 </template>
@@ -21,9 +21,8 @@ import QuizContent from  '@/components/dashboard/QuizContent.vue'
 export default {
   name: 'AssignmentContent',
   props: {
-    type: {
-      default: 1,
-      type: Number
+    assignment: {
+      type: Object
     }
   },
   components: {

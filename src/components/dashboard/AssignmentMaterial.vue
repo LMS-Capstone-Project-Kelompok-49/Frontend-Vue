@@ -6,7 +6,7 @@
                     <i class="far fa-file-alt"></i>
                 </div>
                 <div class="ml-3">
-                    UIUX.DW.116.docx
+                    {{ material.title }}
                 </div>
             </div>
         </div>
@@ -16,6 +16,11 @@
 <script>
 export default {
     name: 'AssignmentMaterial',
+    props: {
+        material: {
+            type: Object
+        }
+    },
 }
 </script>
 

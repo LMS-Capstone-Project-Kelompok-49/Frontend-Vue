@@ -1,5 +1,5 @@
 <template>
-    <div class="container my-4" @click="toPage('DetailMaterialsDashboard')">
+    <div class="container my-4" @click="toPage('DetailMaterialsDashboard', material.id)">
         <div class="d-flex">
             <div>
                 <b-avatar class="bg-mx-blue-green" size="3em">
@@ -10,18 +10,18 @@
                 <div class="card card-material">
                     <div class="card-header p-3">
                         <label class="card-title">
-                            Materi Pertemuan 12
+                            {{ material.title }}
                         </label><br>
                         <label class="card-subtitle">
-                            Hamidillah Ajie posts new material
+                            {{ mentor }} posts new material
                         </label>
                         <label class="card-subtitle ml-3">
-                            29 April 2022, 08:57 AM
+                            {{ material.date }}
                         </label>
                     </div>
                     <div class="card-body">
                         <div class="text">
-                            Selamat pagi semuanya, untuk hari ini kita melakukan perkuliahan secara Asynchronous ya. Saya sudah upload materi pertemuan 12.
+                            {{ material.message }}
                         </div>
                     </div>
                 </div>
@@ -33,9 +33,17 @@
 <script>
 export default {
     name: 'TabsMaterial',
+    props: {
+        material: {
+            type: Object
+        },
+        mentor: {
+            type: String
+        }
+    },
     methods: {
-        toPage (routeName) {
-            this.$router.push({ name: routeName, params: { id: 1, materialId: 4212 } })
+        toPage (routeName, CourseID) {
+            this.$router.push({ name: routeName, params: { id: 1, materialId: CourseID } })
         }
     },
 }

@@ -7,10 +7,10 @@
                 </div>
                 <div class="col-8">
                     <div class="course-title-desc mt-2">
-                        <label class="title">Pemrograman Web</label><br>
+                        <label class="title"> {{ course.title }} </label><br>
                         <label class="sub text-muted">
                             <i class="fas fa-user mr-2"></i>
-                            Fuad Mumtas, S.pd
+                            {{ course.mentor.name }}
                         </label>
                     </div>
                 </div>
@@ -19,25 +19,25 @@
                 <div>
                     <label>
                         <i class="fas fa-users mr-2"></i>
-                        30 Members
+                        {{ course.members.length }} Member
                     </label>
                 </div>
                 <div>
                     <i class="fas fa-list mr-2"></i>
-                    <label>3 Material</label>
+                    <label>{{ course.materials.length }} Material</label>
                 </div>
             </div>
             <div class="course-progess my-4">
                 <div class="d-flex justify-content-between">
                     <span>Your Progress</span>
-                    <span>40%</span>
+                    <span>{{ course.progess }}</span>
                 </div>
                 <div class="progress">
-                    <div class="progress-bar bg-mx-green" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                    <div class="progress-bar bg-mx-green" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"  :style="{ 'width': course.progess }"></div>
                 </div>
             </div>
         </div>
-        <button class="btn btn-info btn-block m-0 btn-courses bg-mx-green border-mx-green" @click="toDetail(1)">
+        <button class="btn btn-info btn-block m-0 btn-courses bg-mx-green border-mx-green" @click="toDetail(course.id)">
             View Class
         </button>
     </div>
@@ -46,6 +46,11 @@
 <script>
 export default {
     name: 'MyCourseDashboard',
+    props: {
+        course: {
+            type: Object
+        }
+    },
     methods: {
         toDetail (idCourse) {
             this.$router.push({ name: 'DetailCourseDashboard', params: {id:idCourse } })
