@@ -1,16 +1,17 @@
 <template>
     <div>
-            <DetailSilabus :course="getCourses[0]" />
+        <div v-for="(value, index) in getCourses" :key="index">
+            <DetailAnnouncementAdmin :courseAss="value[0]" />
+        </div>
     </div>
 </template>
 
 <script>
-import DetailSilabus from '@/components/adminpage/DetailSilabusAdmin.vue'
-
+import DetailAnnouncementAdmin from '@/components/adminpage/DetailAnnouncementAdmin.vue'
 export default {
-  name: 'MainDetailContentAdmin',
+  name: 'AnnouncementAdminContent',
   components: {
-    DetailSilabus,
+    DetailAnnouncementAdmin
   },
   computed: {
     getCourses () {
@@ -20,11 +21,7 @@ export default {
             return value.id === id
         })
     }
-  },
-  data() {
-      return {
-      }
-  },
+  }
 }
 </script>
 

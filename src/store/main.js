@@ -4,7 +4,7 @@ import router from '../router/index'
 const state = () => ({
   loginMessage: '',
   isLogin: true,
-  role: 'User',
+  role: 'Admin',
   token: '',
   transactions: [
     { name: 'ada' }

@@ -18,18 +18,22 @@
                 </div>
             </div>
             <div class="d-flex">
-                <MyCourseAdmin v-for="n in 3" :key="n" class="m-2" />
+                <MyCourseAdmin v-for="(value, index) in getCourse" :key="index" :course="value" />
             </div>
             
             <div class="row mt-4">
             <div class="mt-2 col-sm-12 col-md-12 col-lg-8 d-flex-column">
                 <h3 class="sub-title">Assignment</h3>
-                <MyAssignmentAdmin v-for="n in 5" :key="n" />
+                <div v-for="(value, index) in getCourse" :key="index">
+                        <div v-if="value.assignments">
+                            <MyAssignmentAdmin v-for="(valueAsg, indexAsg) in value.assignments" :key="indexAsg" :assignment="valueAsg" :course="value" />
+                        </div>
+                    </div>
             </div>
 
             <div class="mt-4 col-sm-12 col-md-12 col-lg-4 d-flex-column">
                 <div class="mb-5 mt-2">
-                    <DetailAnnouncementAdmin />
+                    <AnnouncementAdminContent />
                 </div>
             </div>
         </div>
@@ -39,14 +43,14 @@
 <script>
 import MyCourseAdmin from '@/components/adminpage/MyCourseAdmin.vue'
 import MyAssignmentAdmin from '@/components/adminpage/MyAssignmentAdmin.vue'
-import DetailAnnouncementAdmin from '@/components/adminpage/DetailAnnouncementAdmin.vue'
+import AnnouncementAdminContent from '@/components/adminpage/AnnouncementAdminContent.vue'
 
 export default {
   name: 'MainAdminContent',
   components: {
       MyCourseAdmin,
       MyAssignmentAdmin,
-      DetailAnnouncementAdmin,
+      AnnouncementAdminContent,
   },
   data() {
       return {
@@ -57,6 +61,11 @@ export default {
         ]
       }
   },
+  computed: {
+    getCourse () {
+        return this.$store.state.main.user.courses
+    },
+  }
 }
 </script>
 

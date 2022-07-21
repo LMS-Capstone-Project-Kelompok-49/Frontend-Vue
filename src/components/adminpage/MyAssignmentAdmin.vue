@@ -2,21 +2,20 @@
     <div class="assignment mt-2">
         <div class="d-flex justify-content-around">
             <div class="assignment-dot">
-                <button class="btn btn-info rounded" type="button"></button>
+                <button class="btn btn-info rounded" type="button" v-if="assignment.type === 1"></button>
+                <button class="btn btn-danger rounded" type="button" v-if="assignment.type === 2"></button>
             </div>
             <div class="assignment-text">
-                <label>Pemrograman Web</label><br>
-                <label class="text-muted">Task 1</label>
+                <label>{{ course.title }}</label>
             </div>
             <div class="assignment-text">
-                <label>Quiz Pemahaman Lara...</label><br>
-                <label class="text-muted">Laravel</label>
+                <label>{{ assignment.title.substring(0,25)+".." }}</label>
             </div>
             <div class="assignment-text">
-                <label>Ridho Alkahfi Bagas</label>
+                <label class="text-muted">Due {{ assignment.due }}</label>
             </div>
             <div class="assignment-dot">
-                <button type="button" class="btn btn-info rounded-pill" @click="toPage('DetailAssignmentAdmin')">Review</button>
+                <button type="button" class="btn btn-info rounded-pill" @click="toPage('DetailAssignmentDashboard', assignment.id)">Add Task</button>
             </div>
         </div>
     </div>
@@ -25,9 +24,17 @@
 <script>
 export default {
     name: 'MyAssignmentAdmin',
+    props: {
+        assignment: {
+            type: Object
+        },
+        course: {
+            type: Object
+        },
+    },
     methods: {
-        toPage (routeName) {
-            this.$router.push({ name: routeName, params: { id: 1, code: 2 } })
+        toPage (routeName, assignmentId) {
+            this.$router.push({ name: routeName, params: { id: 1, code: assignmentId } })
         }
     },
 }
