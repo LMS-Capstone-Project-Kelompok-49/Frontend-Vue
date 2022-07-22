@@ -3,7 +3,7 @@
     <h2 class="text-mx-green">Transaction</h2>
     <div class="card p-0">
         <div class="card-body">
-            <TransactionCard v-for="(value, index) in transactionItem" :key="index" />
+            <TransactionCard v-for="(value, index) in transactionItem" :key="index" :data="value" />
         </div>
     </div>
   </div>

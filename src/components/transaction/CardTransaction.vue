@@ -9,7 +9,7 @@
                     Metode Payment
                 </div>
                 <div>
-                    BCA Virtual Account
+                    {{ data.method }}
                 </div>
             </div>
             <div class="my-auto">
@@ -17,7 +17,7 @@
                     Number of Virtual Account
                 </div>
                 <div>
-                    807771234567898765
+                    {{ data.virtualAccout }}
                     <i class="fas fa-clipboard ml-2"></i>
                 </div>
             </div>
@@ -26,28 +26,37 @@
                     Total Payment
                 </div>
                 <div>
-                    Rp. 520.000
+                    Rp. {{ data.total }}
                 </div>
             </div>
             <div class="my-auto">
                 <div class="text-muted">
                     Payment Due
                 </div>
-                <div class="text-danger">
-                    26 June, 12:18 PM
+                <div class="text-danger" v-if="data.status === 0">
+                    {{ data.due }}
+                </div>
+                <div class="text-success" v-if="data.status === 1">
+                    {{ data.due }}
                 </div>
             </div>
             <div class="my-auto">
                 <div class="text-muted">
                     Status
                 </div>
-                <div class="text-primary">
+                <div class="text-danger" v-if="data.status === 0">
                     Need to Pay
+                </div>
+                <div class="text-success" v-if="data.status === 1">
+                    Success
                 </div>
             </div>
             <div>
-                <button class="btn btn-outline-info bg-mx-green border-mx-green text-white">
-                    Detail
+                <button class="btn btn-outline-info bg-mx-green border-mx-green text-white" v-if="data.status === 0">
+                    How To Pay
+                </button>
+                <button class="btn btn-info bg-mx-green border-mx-green text-white" disabled v-if="data.status === 1">
+                    Detail Payment
                 </button>
             </div>
         </div>
@@ -57,6 +66,11 @@
 <script>
 export default {
     name: 'TransactionCard',
+    props: {
+        data: {
+            type: Object
+        }
+    },
     methods: {
         toPage (routeName) {
             this.$router.push({ name: routeName, params: { id: 1, code: 2 } })

@@ -5,15 +5,15 @@
         <div class="row mt-3" >
           <div class="row">
             <div class="col-8 d-flex-column">
-                <DetailCourseItem />  
+                <DetailCourseItem :course="getCourse[0]" />  
             </div>
             <div class="col-4 d-flex-column">
-                <CardsInfoItem />
+                <CardsInfoItem :course="getCourse[0]" />
             </div>
           </div>
         </div>
         <div>
-            <TestimonialItem />
+            <TestimonialItem :course="getCourse[0]" />
         </div>
       </div>
     </div>
@@ -40,7 +40,10 @@ export default {
   },
   computed: {
     getCourse () {
-      return this.$store.state.home.course
+      const id = this.$route.params.id
+      return this.$store.state.home.courses.filter(function(value){
+        return value.id === id
+      })
     },
     ifTrueCourse () {
       return (this.$store.state.home.courseID === this.$route.params.id)

@@ -6,14 +6,14 @@
                 <div class="d-flex justify-content-between mt-4">
                             <div>
                                 <div class="discount-course">
-                                    <label class="text-decoration-line-through text-muted">Rp 600.000</label>
+                                    <label class="text-decoration-line-through text-muted">Rp {{ course.price }}</label>
                                 </div>
                                 <div class="price-course">
-                                    <label>Rp 520.000</label>
+                                    <label>Rp {{ course.price-(course.price*course.discount/100) }}</label>
                                 </div>
                             </div>
                             <div class="btn-course-wrapper">
-                                <button class="btn btn-success py-2 btn-join-course" @click="toDetail">
+                                <button class="btn btn-success py-2 btn-join-course" @click="toDetail(course.id)">
                                     Join Now
                                 </button>
                             </div>
@@ -42,112 +42,62 @@
                 <h5 class="card-title">About the Mentor</h5>
                 <div class="About Mentor">
                     <div class="d-flex">
-                        <a class="logo mr-4" href="/">
+                        <a class="logo mr-4">
                             <div class="logo-image">
-                                <img :src="require('@/assets/images/detailcourse_logo_mentor.png')" width="50px" />
+                                <b-avatar :src="course.mentor.image" size="4em"></b-avatar>
                             </div>
                         </a>
                         <div>
-                            <h6 class="label-mentor">Amidillah Ajie, S.Si, M.T</h6>
-                            <label class="label-mentor-detail">Web Specialist</label>
+                            <h6 class="label-mentor">{{ course.mentor.name }}</h6>
+                            <label class="label-mentor-detail">{{ course.mentor.job }}</label>
                         </div>
                     </div>
-                    <p class="detail-mentor pt-3" justified>Hi, perkenalkan saya adalah Amidillah Ajie. Saya telah menjadi spesialis Web selama 2 tahun dan memiliki kemampuan di bidang Web Developer. </p>
+                    <p class="detail-mentor pt-3" justified>
+                        {{ course.mentor.about }}
+                    </p>
                 </div>
             </div>
         </div>
         <div class="card pt-3 justify-content-center sub-subtile-course" style="width: 20rem;">
             <h5 class="card-title ms-3 mt-2">Materials Info</h5>
-            <div class="card smallcard ms-4 me-4 mt-2">
-                <div class="card">
-                    <div class="d-flex pt-2 ms-3">
-                        <div class="me-auto">
-                            <i class="far fa-play-circle mr-2 icon"></i>
-                            <label class="text-muted">Introduction of Web Developer</label>
-                        </div>
-                        <div>
-                            <label class="text-muted me-3">15.00</label>
+            <div v-for="(valueMaterial, indexMaterial) in course.material" :key="indexMaterial">
+
+                <div class="card smallcard ms-4 me-4 mt-2">
+                    <div class="card">
+                        <div class="d-flex pt-2 ms-3">
+                            <div class="me-auto">
+                                <i class="far fa-play-circle mr-2 icon" v-if="valueMaterial.type === 1"></i>
+                                <i class="fas fa-book-bookmark mr-2 icon" v-if="valueMaterial.type === 2"></i>
+                                <label class="text-muted">{{ valueMaterial.title }}</label>
+                            </div>
+                            <div>
+                                <label class="text-muted me-3"></label>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+            </div>          
+            <div class="mb-2">
+
             </div>
-            <div class="card smallcard ms-4 me-4 mt-2">
-                <div class="card">
-                    <div class="d-flex pt-2 ms-3">
-                        <div class="me-auto">
-                            <i class="fas fa-book-bookmark mr-2 icon"></i>
-                            <label class="text-muted">Introduction of Web Developer</label>
-                        </div>
-                        <div>
-                            <label class="text-muted me-3"></label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card smallcard ms-4 me-4 mt-2">
-                <div class="card">
-                    <div class="d-flex pt-2 ms-3">
-                        <div class="me-auto">
-                            <i class="far fa-play-circle mr-2 icon"></i>
-                            <label class="text-muted">Introduction of Web Developer</label>
-                        </div>
-                        <div>
-                            <label class="text-muted me-3">15.00</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card smallcard ms-4 me-4 mt-2">
-                <div class="card">
-                    <div class="d-flex pt-2 ms-3">
-                        <div class="me-auto">
-                            <i class="fas fa-book-bookmark mr-2 icon"></i>
-                            <label class="text-muted">Introduction of Web Developer</label>
-                        </div>
-                        <div>
-                            <label class="text-muted me-3"></label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card smallcard ms-4 me-4 mt-2">
-                <div class="card">
-                    <div class="d-flex pt-2 ms-3">
-                        <div class="me-auto">
-                            <i class="far fa-play-circle mr-2 icon"></i>
-                            <label class="text-muted">Introduction of Web Developer</label>
-                        </div>
-                        <div>
-                            <label class="text-muted me-3">15.00</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card smallcard ms-4 me-4 mt-2 mb-4">
-                <div class="card">
-                    <div class="d-flex pt-2 ms-3">
-                        <div class="me-auto">
-                            <i class="fas fa-book-bookmark mr-2 icon"></i>
-                            <label class="text-muted">Introduction of Web Developer</label>
-                        </div>
-                        <div>
-                            <label class="text-muted me-3"></label>
-                        </div>
-                    </div>
-                </div>
-            </div>           
         </div>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'CardsInfoItem',
-  methods: {
-      toDetail () {
-        this.$router.push({ name: 'CheckoutPage' })
-      }
-  },
+    name: 'CardsInfoItem',
+    props: {
+        course: {
+            type: Object
+        }
+    },
+    methods: {
+        toDetail (courseId) {
+            this.$router.push({ name: 'CheckoutPage', params: { id: courseId  } })
+        }
+    },
 }
 </script>
 
