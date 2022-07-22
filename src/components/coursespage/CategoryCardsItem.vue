@@ -3,9 +3,9 @@
         <h3 class="text-dark">Browse By Category</h3>
         <div class="d-flex text-center align-items-center flex-wrap">
             <div v-for="(value, index) in getAllTypeCourse" :key="index" class="mx-1 my-1">
-                <b-button variant="outline-info" class="border-mx-green btn-category d-flex align-items-center" type="button" @click="getCourseByType(index)" :class="{ 'bg-mx-green text-white': index === activeType }" >
+                <b-button variant="outline-info" class="border-mx-green btn-category d-flex align-items-center" type="button" @click="toPage('SearchPage')" :class="{ 'bg-mx-green text-white': index === activeType }" >
                     <img :src="require('@/assets/images/logo_category.png')" alt="...">
-                    <h5 class="card-title m-4">{{ value.coursetype }}</h5>
+                    <h5 class="card-title m-4">{{ value.name }}</h5>
                 </b-button>            
             </div>
         </div>
@@ -41,6 +41,9 @@ export default {
     },
     clearActiveType () {
         this.$store.dispatch('home/clearActiveType')
+    },
+    toPage (RouteName) {
+        this.$router.push({ name: RouteName })
     }
   },
 }

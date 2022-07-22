@@ -7,7 +7,22 @@ const state = () => ({
   role: '',
   token: '',
   transactions: [
-    { name: 'ada' }
+    { 
+      code: 'Az4212PmbyrnCourse',
+      method: 'BCA Virtual Account',
+      virtualAccout: '807771234567898765',
+      due: '26 June, 12:18 PM',
+      total: 500000,
+      status: 0
+    },
+    { 
+      code: 'Az41212PmbyrnCourse',
+      method: 'BCA Virtual Account',
+      virtualAccout: '807771234567898765',
+      due: '26 June, 12:18 PM',
+      total: 500000,
+      status: 1
+    }
   ],
   user: {
     id: 1,

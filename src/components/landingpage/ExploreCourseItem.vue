@@ -10,8 +10,7 @@
             </div>
         </div>
         <div class="row mb-5">
-            <!-- <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="(value, index) in getCourses" :key="index"> -->
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="n in 6" :key="n">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="(value, index) in getCourses" :key="index">
                 <div class="card border-light">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
@@ -19,39 +18,39 @@
                                 <img :src="require('@/assets/images/Rectangle4486.png')"/>
                             </div>
                             <div>
-                                <b-form-rating v-model="rating" variant="warning" class="rating-form" no-border readonly></b-form-rating>
+                                <b-form-rating v-model="value.rating" variant="warning" class="rating-form" no-border readonly></b-form-rating>
                             </div>
                         </div>
                         <div>
-                            <label class="title-course">Belajar Web</label>
+                            <label class="title-course">{{ value.title }}</label>
                             <div class="sub-title-course">
-                                <div class="">
+                                <div>
                                     <i class="fas fa-user text-muted mr-3"></i>
-                                    <label class="text-muted">Amidillah Ajie, S.Si, M.T</label>
+                                    <label class="text-muted">{{ value.mentor.name }}</label>
                                 </div>
                             </div>
                             <div class="d-flex sub-subtile-course">
                                 <div>
                                     <i class="fas fa-file-video mr-2 icon"></i>
-                                    <label class="text-muted">15 Videos</label>
+                                    <label class="text-muted">{{ value.material.length }} Videos</label>
                                 </div>
                                 <div class="mx-3">
                                     <i class="fas fa-users mr-2 icon"></i>
-                                    <label class="text-muted">50+ Members  </label>
+                                    <label class="text-muted">{{ value.member }} Members  </label>
                                 </div>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between mt-4">
                             <div>
                                 <div class="discount-course">
-                                    <label class="text-decoration-line-through text-muted">Rp 600.000</label>
+                                    <label class="text-decoration-line-through text-muted">Rp {{ value.price }}</label>
                                 </div>
                                 <div class="price-course">
-                                    <label>Rp 520.000</label>
+                                    <label>Rp {{ value.price-(value.price*value.discount/100) }}</label>
                                 </div>
                             </div>
                             <div class="btn-course-wrapper">
-                                <button class="btn btn-success py-2 btn-join-course" @click="toDetail">
+                                <button class="btn btn-success py-2 btn-join-course" @click="toDetail(value.id)">
                                     Join Class
                                 </button>
                             </div>
@@ -65,26 +64,21 @@
 
 <script>
 export default {
-  name: 'ExploreCourseItem',
-  props: {
-      title: String,
-      typeTitle: Number,
-  },
-  computed: {
-      getCourses () {
-        return this.$store.state.home.courses
-      }
-  },
-  data() {
-      return {
-        rating: 4
-      }
-  },
-  methods: {
-    toDetail () {
-        this.$router.push({ name: 'DetailCoursePage', params: { id: 1 } })
-    }
-  },
+    name: 'ExploreCourseItem',
+    props: {
+        title: String,
+        typeTitle: Number,
+    },
+    computed: {
+        getCourses () {
+            return this.$store.state.home.courses
+        }
+    },
+    methods: {
+        toDetail (courseId) {
+            this.$router.push({ name: 'DetailCoursePage', params: { id: courseId } })
+        }
+    },
 }
 </script>
 
