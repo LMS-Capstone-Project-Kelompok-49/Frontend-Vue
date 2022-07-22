@@ -190,7 +190,6 @@ export default {
     methods: {
         toPage () {
             event.preventDefault()
-            this.
             this.$router.push({ name: 'PayPage', params: { code: 4212 } })
         }
     },
